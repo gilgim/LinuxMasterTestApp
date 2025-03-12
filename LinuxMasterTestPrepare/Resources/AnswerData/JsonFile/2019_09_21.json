@@ -1,0 +1,1058 @@
+[
+  {
+    "question": "다음 중 2차적 저작물 소스 코드 공개에 대한 정책이 나머지와 다른 것은?",
+    "options": [
+      "GPL",
+      "BSD",
+      "LGPL",
+      "MPL"
+    ],
+    "correctAnswer": "BSD"
+  },
+  {
+    "question": "다음 중 다수의 웹 서버를 운영하는 환경에서 구축할 때 유용한 조합으로 가장 알맞은 것은?",
+    "options": [
+      "고계산용 클러스터와 부하분산 클러스터",
+      "부하분산 클러스터와 고가용성 클러스터",
+      "고계산용 클러스터와 고가용성 클러스터",
+      "베어울프 클러스터와 부하분산 클러스터"
+    ],
+    "correctAnswer": "부하분산 클러스터와 고가용성 클러스터"
+  },
+  {
+    "question": "다음 설명에 해당하는 리눅스 배포판은?",
+    "options": [
+      "Debian",
+      "Fedora",
+      "Redhat",
+      "Ubuntu"
+    ],
+    "correctAnswer": "Debian",
+    "image": "r120190921m3.gif"
+  },
+  {
+    "question": "다음 설명과 관련된 기술로 가장 알맞은 것은?",
+    "options": [
+      "스와핑(Swapping)",
+      "파이프(Pipe)",
+      "라이브러리(Library)",
+      "가상 콘솔(Virtual Console)"
+    ],
+    "correctAnswer": "가상 콘솔(Virtual Console)",
+    "image": "r120190921m4.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 클라우드 서비스로 알맞은 것은?",
+    "options": [
+      "IaaS",
+      "DaaS",
+      "PaaS",
+      "SaaS"
+    ],
+    "correctAnswer": "IaaS",
+    "image": "r120190921m5.gif"
+  },
+  {
+    "question": "다음 중 LVM을 구성하는 순서로 알맞은 것은?",
+    "options": [
+      "볼륨그룹 → 물리적 볼륨 → 논리적 볼륨",
+      "볼륨그룹 → 논리적 볼륨 → 물리적 볼륨",
+      "물리적 볼륨 → 볼륨그룹 → 논리적 볼륨",
+      "논리적 볼륨 → 볼륨그룹 → 물리적 볼륨"
+    ],
+    "correctAnswer": "물리적 볼륨 → 볼륨그룹 → 논리적 볼륨"
+  },
+  {
+    "question": "다음 중 GRUB의 환경 설정파일에서 'default=1'에 대한 설명으로 알맞은 것은?",
+    "options": [
+      "'title' 항목으로 나타나는 첫 번째 운영체제를 의미한다.",
+      "'title' 항목으로 나타나는 두 번째 운영체제를 의미한다.",
+      "GRUB 메뉴 화면에서의 대기 시간이 1초임을 의미한다.",
+      "GRUB 메뉴 화면에서의 대기 시간이 10초임을 의미한다."
+    ],
+    "correctAnswer": "'title' 항목으로 나타나는 두 번째 운영체제를 의미한다."
+  },
+  {
+    "question": "다음 설명에 해당하는 내용으로 알맞은 것은?",
+    "options": [
+      "exec",
+      "fork",
+      "inetd",
+      "standalone"
+    ],
+    "correctAnswer": "exec",
+    "image": "r120190921m8.gif"
+  },
+  {
+    "question": "다음 중 가장 큰 번호 값을 갖는 시그널(signal)로 알맞은 것은?",
+    "options": [
+      "SIGTERM",
+      "SIGKILL",
+      "SIGSTOP",
+      "SIGQUIT"
+    ],
+    "correctAnswer": "SIGSTOP"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 출력되는 내용으로 알맞은 것은?",
+    "options": [
+      "?",
+      "0",
+      "1",
+      "2"
+    ],
+    "correctAnswer": "0",
+    "image": "r120190921m10.gif"
+  },
+  {
+    "question": "다음 중 GNOME 3 버전에서 사용하는 윈도 매니저로 알맞은 것은?",
+    "options": [
+      "nautilus",
+      "KWin",
+      "Metacity",
+      "Mutter"
+    ],
+    "correctAnswer": "Mutter"
+  },
+  {
+    "question": "다음 중 포어그라운드 프로세스를 백그라운드 프로세스로 전환할 때 사용하는 키 조합으로 알맞은 것은?",
+    "options": [
+      "Ctrl + C",
+      "Ctrl + D",
+      "Ctrl + L",
+      "Ctrl + Z"
+    ],
+    "correctAnswer": "Ctrl + Z"
+  },
+  {
+    "question": "명령 1이 성공적으로 수행되면 명령 2가 실행되도록 하려고 한다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      ";",
+      "|",
+      "||",
+      "&&"
+    ],
+    "correctAnswer": "&&",
+    "image": "r120190921m13.gif"
+  },
+  {
+    "question": "다음 중 X 클라이언트 프로그램을 다른 원격지의 X 서버로 전송하기 위해 변경해야 할 환경변수로 알맞은 것은?",
+    "options": [
+      "TERM",
+      "TERMINAL",
+      "SESSION",
+      "DISPLAY"
+    ],
+    "correctAnswer": "DISPLAY"
+  },
+  {
+    "question": "다음 중 파일 시스템 점검을 위해 단일 사용자 모드로 전환할 때 사용하는 명령으로 알맞은 것은?",
+    "options": [
+      "init 0",
+      "init 1",
+      "init 5",
+      "init 6"
+    ],
+    "correctAnswer": "init 1"
+  },
+  {
+    "question": "DoS공격중 하나인 Ping of Death 공격에 대응하기 위하여 방화벽에서 특정 프로토콜을 차단하는 보안 정책을 적용하려고 한다. 다음 중 차단해야 하는 프로토콜로 알맞은 것은?",
+    "options": [
+      "FTP",
+      "ARP",
+      "DNS",
+      "ICMP"
+    ],
+    "correctAnswer": "ICMP"
+  },
+  {
+    "question": "사용 가능한 호스트 수가 126개인 서브 네트워크를 구성하려고 한다. 다음 중 네트워크 접두어 길이 표현방법으로 가장 알맞은 것은?",
+    "options": [
+      "/8",
+      "/16",
+      "/24",
+      "/25"
+    ],
+    "correctAnswer": "/25"
+  },
+  {
+    "question": "다음 중 프로토콜에 대한 설명으로 틀린 것은?",
+    "options": [
+      "ISO, ANSI, ITU-T는 대표적인 프로토콜의 제정 기관이다.",
+      "프로토콜의 기능으로는 흐름제어, 오류제어, 동기화, 캡슐화 등이 있다.",
+      "프로토콜은 구문(Syntax), 의미(Semantics), 순서(Timing)으로 구성되어 있다.",
+      "대표적인 프로토콜인 TCP/IP는 ISO에서 제정하였다."
+    ],
+    "correctAnswer": "대표적인 프로토콜인 TCP/IP는 ISO에서 제정하였다."
+  },
+  {
+    "question": "다음 중 FTP 서비스에서 사용하는 명령어로 가장 거리가 먼 것은?",
+    "options": [
+      "mcd",
+      "mget",
+      "mput",
+      "mdelete"
+    ],
+    "correctAnswer": "mcd"
+  },
+  {
+    "question": "다음에서 설명하는 것으로 알맞은 것은?",
+    "options": [
+      "IP 주소",
+      "사설 IP 주소",
+      "루프백 IP 주소",
+      "멀티캐스트 주소"
+    ],
+    "correctAnswer": "루프백 IP 주소",
+    "image": "r120190921m20.gif"
+  },
+  {
+    "question": "파일 및 디렉터리를 생성했더니 기본 생성되는 허가권 값이 아래와 같다. 다음 중 umask 명령을 실행했을 때 나타나는 값으로 알맞은 것은?",
+    "options": [
+      "0002",
+      "0644",
+      "0664",
+      "0775"
+    ],
+    "correctAnswer": "0775",
+    "image": "r120190921m21.gif"
+  },
+  {
+    "question": "/etc/shadow 파일에서 계정 만기일 영역에 해당하는 필드 순서로 알맞은 것은?",
+    "options": [
+      "3번째",
+      "7번째",
+      "8번째",
+      "9번째"
+    ],
+    "correctAnswer": "8번째"
+  },
+  {
+    "question": "소스 파일을 이용해서 특정 프로그램을 설치할 때 관련 옵션을 확인하려고 한다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "--option",
+      "--options",
+      "--menu",
+      "--help"
+    ],
+    "correctAnswer": "--help",
+    "image": "r120190921m23.gif"
+  },
+  {
+    "question": "다음 중 명령어의 사용법으로 틀린 것은?",
+    "options": [
+      "pgrep httpd",
+      "nice -10 1222",
+      "killall httpd",
+      "renice 1 987 -u daemon root –p 1222"
+    ],
+    "correctAnswer": "nice -10 1222"
+  },
+  {
+    "question": "다음 중 월, 수, 금요일 오전 4시 1분에 실행되는 crontab 설정으로 알맞은 것은?",
+    "options": [
+      "4 1 * * 1,3,5 /etc/lin.sh",
+      "1 4 * * 1,3,5 /etc/lin.sh",
+      "4 1 1,3,5 * * /etc/lin.sh",
+      "1 4 1,3,5 * * /etc/lin.sh"
+    ],
+    "correctAnswer": "1 4 * * 1,3,5 /etc/lin.sh"
+  },
+  {
+    "question": "다음은 lin.txt 파일의 수정 시간(Modify time)을 변경하는 과정이다. ( 괄호 ) 안에 들어갈 명령 으로 알맞은 것은?",
+    "options": [
+      "file",
+      "stat",
+      "chage",
+      "touch"
+    ],
+    "correctAnswer": "touch",
+    "image": "r120190921m26.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 파일로 알맞은 것은?",
+    "options": [
+      "/etc/skel",
+      "/etc/passwd",
+      "/etc/login.defs",
+      "/etc/default/useradd"
+    ],
+    "correctAnswer": "/etc/default/useradd",
+    "image": "r120190921m27.gif"
+  },
+  {
+    "question": "다음 중 joon이라는 아이디를 lin으로 변경하는 명령으로 알맞은 것은?",
+    "options": [
+      "usermod -l joon lin",
+      "usermod -l lin joon",
+      "usermod -n joon lin",
+      "usermod -n lin joon"
+    ],
+    "correctAnswer": "usermod -l lin joon"
+  },
+  {
+    "question": "다음 중 특수 권한인 Set-UID, Set-GID, Sticky Bit가 부여된 파일이나 디렉터리로 틀린 것은?",
+    "options": [
+      "/tmp",
+      "/bin/su",
+      "/etc/shadow",
+      "/usr/bin/passwd"
+    ],
+    "correctAnswer": "/etc/shadow"
+  },
+  {
+    "question": "다음은 스왑 파일을 생성하는 단계의 일부이다. ( 괄호 ) 안에 들어갈 명령어로 알맞은 것은?",
+    "options": [
+      "dd",
+      "mkswap",
+      "swapon",
+      "swapoff"
+    ],
+    "correctAnswer": "dd",
+    "image": "r120190921m30.gif"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "-q",
+      "-qc",
+      "-qp",
+      "-V"
+    ],
+    "correctAnswer": "-V",
+    "image": "r120190921m31.gif"
+  },
+  {
+    "question": "다음 중 온라인 기반 패키지 관리 기법으로 가장 거리가 먼 것은?",
+    "options": [
+      "yum",
+      "yast",
+      "apt-get",
+      "zypper"
+    ],
+    "correctAnswer": "yast"
+  },
+  {
+    "question": "다음 중 사용자가 백그라운드로 수행중인 프로세스 정보를 확인할 때 사용하는 명령어로 알맞은 것은?",
+    "options": [
+      "fg",
+      "bg",
+      "jobs",
+      "pgrep"
+    ],
+    "correctAnswer": "jobs"
+  },
+  {
+    "question": "다음 중 프로세스에 할당되는 NI 값의 범위로 알맞은 것은?",
+    "options": [
+      "-20 ∼ 20",
+      "-20 ∼ 19",
+      "-19 ∼ 19",
+      "-19 ∼ 20"
+    ],
+    "correctAnswer": "-20 ∼ 19"
+  },
+  {
+    "question": "다음 중 yum을 이용해서 telnet이라는 문자열이 들어있는 패키지를 전부 찾는 명령으로 알맞은 것은?",
+    "options": [
+      "yum info telnet",
+      "yum list telnet",
+      "yum find telnet",
+      "yum search telnet"
+    ],
+    "correctAnswer": "yum search telnet"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 수 있는 파일명으로 알맞은 것은?",
+    "options": [
+      "httpd-2.4.41.tar.bz2",
+      "httpd-2.4.41.tar.Z",
+      "php-5.6.40.tar.xz",
+      "mysql-boost-5.7.27.tar.gz"
+    ],
+    "correctAnswer": "php-5.6.40.tar.xz",
+    "image": "r120190921m36.gif"
+  },
+  {
+    "question": "다음 중 시그널의 종류와 번호를 확인할 수 있는 명령으로 알맞은 것은?",
+    "options": [
+      "kill -l",
+      "signal -l",
+      "killall -l",
+      "ps -l"
+    ],
+    "correctAnswer": "kill -l"
+  },
+  {
+    "question": "다음 중 ihduser 계정이 사용하고 있는 디스크의 총 사용량을 확인하는 명령으로 가장 알맞은 것은?",
+    "options": [
+      "du -sh ihduser",
+      "du -sh ~ihduser",
+      "df -sh ihduser",
+      "df -sh ~ihduser"
+    ],
+    "correctAnswer": "du -sh ~ihduser"
+  },
+  {
+    "question": "다음 중 시스템에 로그인된 사용자들의 아이디를 확인하는 명령으로 가장 거리가 먼 것은?",
+    "options": [
+      "w",
+      "who",
+      "users",
+      "logname"
+    ],
+    "correctAnswer": "logname"
+  },
+  {
+    "question": "다음 중 특정 그룹의 그룹 관리자를 지정할 때 사용하는 명령으로 알맞은 것은?",
+    "options": [
+      "grpconv",
+      "newgrp",
+      "gpasswd",
+      "grpck"
+    ],
+    "correctAnswer": "gpasswd"
+  },
+  {
+    "question": "다음 중 새롭게 생성된 파티션을 /etc/fstab 파일에 등록하는 형식으로 알맞은 것은?(오류 신고가 접수된 문제입니다. 반드시 정답과 해설을 확인하시기 바랍니다.)",
+    "options": [
+      "/dev/sdb1 /home2 ext4 default 1 1",
+      "/dev/sdb1 /home2 ext4 defaults 1 1",
+      "/home2 /dev/sdb1 ext4 default 1 1",
+      "/home2 /dev/sdb1 ext4 defaults 1 1"
+    ],
+    "correctAnswer": "/dev/sdb1 /home2 ext4 defaults 1 1"
+  },
+  {
+    "question": "lin.txt라는 문서를 lp라는 이름을 가진 프린터로 2장 출력하는 과정이다. 다음 ( 괄호 ) 안에 들어갈 명령으로 알맞은 것은?",
+    "options": [
+      "lp",
+      "lpr",
+      "lpq",
+      "lpc"
+    ],
+    "correctAnswer": "lpr",
+    "image": "r120190921m42.gif"
+  },
+  {
+    "question": "다음은 e1000이라는 모듈을 제거하는 과정이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "insmod",
+      "rmmod",
+      "depmod",
+      "modprobe"
+    ],
+    "correctAnswer": "rmmod",
+    "image": "r120190921m43.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 것은?",
+    "options": [
+      "OSS",
+      "CUPS",
+      "SANE",
+      "ALSA"
+    ],
+    "correctAnswer": "OSS",
+    "image": "r120190921m44.gif"
+  },
+  {
+    "question": "다음 중 시스템에서 사용 가능한 모듈이 저장되어 있는 디렉터리로 알맞은 것은?",
+    "options": [
+      "/lib/커널버전/modules/kernel",
+      "/lib/modules/커널버전/kernel",
+      "/lib/modules/kernel/커널버전",
+      "/lib/커널버전/kernel/modules"
+    ],
+    "correctAnswer": "/lib/modules/커널버전/kernel"
+  },
+  {
+    "question": "다음 형식과 관련된 파일로 알맞은 것은?",
+    "options": [
+      "modprobe.conf",
+      "modules.conf",
+      "modules.dep",
+      "modprobe.dep"
+    ],
+    "correctAnswer": "modules.dep",
+    "image": "r120190921m46.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 것은?",
+    "options": [
+      "OSS",
+      "CUPS",
+      "SANE",
+      "ALSA"
+    ],
+    "correctAnswer": "SANE",
+    "image": "r120190921m47.gif"
+  },
+  {
+    "question": "다음 중 System V 계열에 속하는 프린터 관련 명령어로 틀린 것은?",
+    "options": [
+      "lp",
+      "lpr",
+      "lpstat",
+      "cancel"
+    ],
+    "correctAnswer": "lpr"
+  },
+  {
+    "question": "다음 중 모듈 간의 의존성이 기록된 파일의 정보를 갱신할 때 사용하는 명령으로 알맞은 것은?",
+    "options": [
+      "insmod",
+      "depmod",
+      "modinfo",
+      "modprobe"
+    ],
+    "correctAnswer": "depmod"
+  },
+  {
+    "question": "다음 설명에 해당하는 커널 컴파일 도구로 알맞은 것은?",
+    "options": [
+      "make config",
+      "make xconfig",
+      "make gconfig",
+      "make menuconfig"
+    ],
+    "correctAnswer": "make menuconfig",
+    "image": "r120190921m50.gif"
+  },
+  {
+    "question": "다음 중 rsync의 특징으로 가장 거리가 먼 것은?",
+    "options": [
+      "레벨을 지정하여 증분 백업이 가능하며, 하드 링크 복사가 가능하다.",
+      "기본적으로 ssh나 rsh를 이용하여 전송하며, 다른 프로토콜 접속을 지원한다.",
+      "이전에 받은 백업본을 삭제하고, 원본과 항상 똑같이 백업이 되도록 설정이 가능하다.",
+      "데이터를 압축하여 전송이 가능하며 심볼릭 링크나, 심볼릭 링크가 참고하고 있는 파일도 복사가 가능하다."
+    ],
+    "correctAnswer": "레벨을 지정하여 증분 백업이 가능하며, 하드 링크 복사가 가능하다."
+  },
+  {
+    "question": "다음 중 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ : 공개키 ㉡ : 비밀키 ㉢ : 복호화",
+      "㉠ : 비밀키 ㉡ : 개인키 ㉢ : 복호화",
+      "㉠ : 공개키 ㉡ : 개인키 ㉢ : 리스토어",
+      "㉠ : 비밀키 ㉡ : 특수키 ㉢ : 리스토어"
+    ],
+    "correctAnswer": "㉠ : 공개키 ㉡ : 비밀키 ㉢ : 복호화",
+    "image": "r120190921m52.gif"
+  },
+  {
+    "question": "ssh 명령을 사용하여 다른 시스템에 패스워드 없이 바로 로그인이 가능하도록 설정하려고 한다. 다음 중 괄호 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ : ./ssh/id_rsa ㉡ : ./ssh/authorized_keys",
+      "㉠ : ./ssh/authorized_keys ㉡ : ./ssh/id_rsa",
+      "㉠ : ./ssh/id_rsa.pub ㉡ : ./ssh/authorized_keys",
+      "㉠ : ./ssh/authorized_keys ㉡ : ./ssh/id_rsa.pub"
+    ],
+    "correctAnswer": "㉠ : ./ssh/id_rsa.pub ㉡ : ./ssh/authorized_keys",
+    "image": "r120190921m53.gif"
+  },
+  {
+    "question": "다음에서 설명하는 백업 명령어로 알맞은 것은?",
+    "options": [
+      "tar",
+      "cpio",
+      "dump",
+      "restore"
+    ],
+    "correctAnswer": "dump",
+    "image": "r120190921m54.gif"
+  },
+  {
+    "question": "다음 중 SELinux를 설정하는 방법으로 틀린 것은?",
+    "options": [
+      "getenforce 명령어를 이용한 수정",
+      "setenforce 명령어를 이용한 수정",
+      "vi 편집기를 이용해 /etc/selinux/config 수정",
+      "system-config-window 도구를 이용한 x-window 환경에서 수정"
+    ],
+    "correctAnswer": "system-config-window 도구를 이용한 x-window 환경에서 수정"
+  },
+  {
+    "question": "다음과 같이 접속하려고 한다. ssh 서버에서 변경하는 설정 파일로 알맞은 것은?",
+    "options": [
+      "/etc/rc.d/init.d/sshd",
+      "/etc/ssh/sshd_config",
+      "./ssh/authorized_keys",
+      "/usr/libexec/openssh/sftp-server"
+    ],
+    "correctAnswer": "/etc/ssh/sshd_config",
+    "image": "r120190921m56.gif"
+  },
+  {
+    "question": "로그 로테이트 설정 시 허가권은 0755, 소유자는 system, 소유그룹은 admin 으로 설정하려고 한다. 다음 중 ( 괄호 )안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ : system ㉡ : admin ㉢ : 0755",
+      "㉠ : admin ㉡ : system ㉢ : 0755",
+      "㉠ : 0755 ㉡ : system ㉢ : admin",
+      "㉠ : 0755 ㉡ : admin ㉢ : system"
+    ],
+    "correctAnswer": "㉠ : 0755 ㉡ : system ㉢ : admin",
+    "image": "r120190921m57.gif"
+  },
+  {
+    "question": "다음 설명에 알맞은 것은?",
+    "options": [
+      "/var/log/secure",
+      "/var/log/dmesg",
+      "/var/log/lastlog",
+      "/var/log/wtmp"
+    ],
+    "correctAnswer": "/var/log/dmesg",
+    "image": "r120190921m58.gif"
+  },
+  {
+    "question": "모든 emerg 수준의 문제가 발생되면 /log/emerg.log 파일에 기록하는 설정을 하려고 한다. 다음 중 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "/log/emerg.log",
+      "*/log/emerg.log",
+      "+/log/emerg.log",
+      "@/log/emerg.log"
+    ],
+    "correctAnswer": "/log/emerg.log",
+    "image": "r120190921m59.gif"
+  },
+  {
+    "question": "다음 중 rsyslog로 생성되는 로그의 저장 위치로 알맞은 것은?",
+    "options": [
+      "/log",
+      "/var/log",
+      "/usr/log",
+      "/etc/rsyslog/log"
+    ],
+    "correctAnswer": "/var/log"
+  },
+  {
+    "question": "/etc/named.conf 파일 설정의 일부가 다음과 같을 때 관련 설명으로 가장 알맞은 것은?",
+    "options": [
+      "해당 서버로 들어온 질의를 무조건 168.126.63.1로 넘기고 처리 여부는 무시한다.",
+      "해당 서버로 들어온 질의를 일단 처리하고, 처리하기 힘든 경우에 168.126.63.1으로 넘긴다.",
+      "해당 서버로 들어온 질의를 168.126.63.1로 넘기고 응답이 없을 경우에 해당 서버에서 처리한다.",
+      "해당 서버로 들어온 질의를 168.126.63.1로 넘기고 응답이 없을 경우에 해당 서버도 응답하지 않는다."
+    ],
+    "correctAnswer": "해당 서버로 들어온 질의를 168.126.63.1로 넘기고 응답이 없을 경우에 해당 서버에서 처리한다.",
+    "image": "r120190921m61.gif"
+  },
+  {
+    "question": "다음 중 전가상화(Bare-Metal/Hypervisor) 기법을 이용하는 제품으로 알맞은 것은?",
+    "options": [
+      "Citrix의 XenServer",
+      "VMware의 ESX Server",
+      "Oracle의 VirtualBox",
+      "Microsoft의 Virtual Server"
+    ],
+    "correctAnswer": "VMware의 ESX Server"
+  },
+  {
+    "question": "다음 중 이름과 성의 조합을 나타내는 LDAP의 속성 관련 키워드로 알맞은 것은?",
+    "options": [
+      "c",
+      "cn",
+      "sn",
+      "dc"
+    ],
+    "correctAnswer": "cn"
+  },
+  {
+    "question": "다음 중 192.168.5.0 네트워크 대역에 속한 호스트 들만 /nfsdata 디렉터리에 접근 가능하도록 설정할 때, ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "192.168.5",
+      "192.168.5.0",
+      "192.168.5.0/24",
+      "192.168.5/255.255.255.0"
+    ],
+    "correctAnswer": "192.168.5.0/24",
+    "image": "r120190921m64.gif"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ 401, ㉡ 403",
+      "㉠ 401, ㉡ 404",
+      "㉠ 403, ㉡ 404",
+      "㉠ 404, ㉡ 403"
+    ],
+    "correctAnswer": "㉠ 403, ㉡ 404",
+    "image": "r120190921m65.gif"
+  },
+  {
+    "question": "다음 중 아파치 웹 서버의 다중처리모듈(MPM : Multi-Process Module) 관련 정보를 확인하는 명령으로 알맞은 것은?",
+    "options": [
+      "httpd -l",
+      "httpd -t",
+      "httpd -f",
+      "httpd -S"
+    ],
+    "correctAnswer": "httpd -l"
+  },
+  {
+    "question": "다음 설명에 해당하는 아파치 웹 서버의 다중처리모듈(MPM : Multi-Process Module)로 알맞은 것은?",
+    "options": [
+      "beos",
+      "prefork",
+      "worker",
+      "perchild"
+    ],
+    "correctAnswer": "worker",
+    "image": "r120190921m67.gif"
+  },
+  {
+    "question": "다음 중 NIS(Network Information Service)와 가장 거리가 먼 것은?",
+    "options": [
+      "Yellow Pages",
+      "X.500",
+      "RPC",
+      "Sun Microsystems"
+    ],
+    "correctAnswer": "X.500"
+  },
+  {
+    "question": "다음 결과에 해당하는 명령으로 알맞은 것은?",
+    "options": [
+      "rpcinfo",
+      "portmap",
+      "exportfs",
+      "rpcbind"
+    ],
+    "correctAnswer": "rpcinfo",
+    "image": "r120190921m69.gif"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 파일명으로 알맞은 것은?",
+    "options": [
+      "/etc/hosts",
+      "/etc/yp.conf",
+      "/etc/ypserv.conf",
+      "/etc/sysconfig/network"
+    ],
+    "correctAnswer": "/etc/yp.conf",
+    "image": "r120190921m70.gif"
+  },
+  {
+    "question": "삼바 서버의 환경 설정 파일에서 ihduser와 kaituser만 접근할 수 있도록 설정하려고 한다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "users",
+      "smbusers",
+      "valid users",
+      "public users"
+    ],
+    "correctAnswer": "valid users",
+    "image": "r120190921m71.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 프로그램으로 알맞은 것은?",
+    "options": [
+      "dovecot",
+      "postfix",
+      "procmail",
+      "sendmail"
+    ],
+    "correctAnswer": "procmail",
+    "image": "r120190921m72.gif"
+  },
+  {
+    "question": "다음은 정보 파일의 내용을 수정하는 과정이다. ( 괄호 ) 안에 들어갈 수 있는 명령의 형식으로 알맞은 것은?",
+    "options": [
+      "m4 virtusertable ＞ virtusertable",
+      "m4 virtusertable ＜ virtusertable",
+      "makemap hash virtusertable ＞ virtusertable",
+      "makemap hash virtusertable ＜ virtusertable"
+    ],
+    "correctAnswer": "makemap hash virtusertable ＜ virtusertable",
+    "image": "r120190921m73.gif"
+  },
+  {
+    "question": "다음은 /etc/named.conf 파일 설정의 일부이다. 네임 서버에 질의할 수 있는 호스트를 지정 하려고 할 때 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "acl",
+      "allow-transfer",
+      "allow-hosts",
+      "allow-query"
+    ],
+    "correctAnswer": "allow-query",
+    "image": "r120190921m74.gif"
+  },
+  {
+    "question": "다음은 zone 파일을 지정하는 과정이다. 도메인이 ihd.or.kr이고, zone 파일명을 ihd.zone으로 지정할 때 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ ihd.or.kr, ㉡ hint",
+      "㉠ ihd.or.kr, ㉡ master",
+      "㉠ ihd.or.kr., ㉡ hint",
+      "㉠ ihd.or.kr., ㉡ master"
+    ],
+    "correctAnswer": "㉠ ihd.or.kr, ㉡ master",
+    "image": "r120190921m75.gif"
+  },
+  {
+    "question": "다음은 zone 파일 설정의 일부이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "A",
+      "MX",
+      "PTR",
+      "CNAME"
+    ],
+    "correctAnswer": "PTR",
+    "image": "r120190921m76.gif"
+  },
+  {
+    "question": "다음은 zone 파일을 지정하는 과정이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ A, ㉡ CNAME",
+      "㉠ CNAME, ㉡ A",
+      "㉠ A, ㉡ NS",
+      "㉠ NS, ㉡ CNAME"
+    ],
+    "correctAnswer": "㉠ A, ㉡ CNAME",
+    "image": "r120190921m77.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 가상화의 효과로 알맞은 것은?",
+    "options": [
+      "단일화(Aggregation)",
+      "에뮬레이션(Emulation)",
+      "절연(Insulation)",
+      "프로비저닝(Provisioning)"
+    ],
+    "correctAnswer": "프로비저닝(Provisioning)",
+    "image": "r120190921m78.gif"
+  },
+  {
+    "question": "Xen 기반의 가상 머신을 생성하기 위해 관련 데몬을 실행하려고 한다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "xend",
+      "libvirtd",
+      "virt-top",
+      "virt-manager"
+    ],
+    "correctAnswer": "libvirtd",
+    "image": "r120190921m79.gif"
+  },
+  {
+    "question": "다음 중 xinetd 기반으로 동작하는 텔넷 서비스를 중단하기 위한 관련 설정 항목과 값으로 알맞은 것은?",
+    "options": [
+      "enable = no",
+      "enable = yes",
+      "disable = no",
+      "disable = yes"
+    ],
+    "correctAnswer": "disable = yes"
+  },
+  {
+    "question": "다음은 squid.conf 파일의 일부이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "acl_dir",
+      "spool_dir",
+      "cache_dir",
+      "coredump_dir"
+    ],
+    "correctAnswer": "cache_dir",
+    "image": "r120190921m81.gif"
+  },
+  {
+    "question": "다음은 dhcpd.conf 파일의 일부이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "dns-servers",
+      "name-servers",
+      "domain-name",
+      "domain-name-servers"
+    ],
+    "correctAnswer": "domain-name-servers",
+    "image": "r120190921m82.gif"
+  },
+  {
+    "question": "다음 중 아파치 웹 서버의 환경 설정 파일에서 일반 사용자의 웹 문서가 위치하는 디렉터리를 변경할 때 사용하는 항목으로 알맞은 것은?",
+    "options": [
+      "HomeDir",
+      "UserDir",
+      "PublicDir",
+      "HtmlDir"
+    ],
+    "correctAnswer": "UserDir"
+  },
+  {
+    "question": "다음 중 SQL 기반의 관계형 데이터베이스로 거리가 먼 것은?",
+    "options": [
+      "MongoDB",
+      "MariaDB",
+      "Oracle",
+      "PostgreSQL"
+    ],
+    "correctAnswer": "MongoDB"
+  },
+  {
+    "question": "다음 중 CentOS 6 버전에서 RPC 서비스를 사용하기 위해 동작시켜야할 데몬명으로 알맞은 것은?",
+    "options": [
+      "portmap",
+      "rpcbind",
+      "ypbind",
+      "ypserv"
+    ],
+    "correctAnswer": "rpcbind"
+  },
+  {
+    "question": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+    "options": [
+      "smbstatus",
+      "testparm",
+      "smbclient",
+      "nmblookup"
+    ],
+    "correctAnswer": "testparm",
+    "image": "r120190921m86.gif"
+  },
+  {
+    "question": "다음은 NFS 서버에 익스포트된 정보를 확인하는 과정이다. ( 괄호 ) 안에 들어갈 명령으로 알맞은 것은?",
+    "options": [
+      "exportfs",
+      "showmount",
+      "rpcinfo",
+      "nfsstat"
+    ],
+    "correctAnswer": "showmount",
+    "image": "r120190921m87.gif"
+  },
+  {
+    "question": "다음 중 vsftpd.conf에서 TCP wrappers를 이용한 접근 제어가 가능하도록 지정하는 설정으로 알맞은 것은?",
+    "options": [
+      "tcp_wrappers=OK",
+      "tcp_wrappers=ON",
+      "tcp_wrappers=OFF",
+      "tcp_wrappers=YES"
+    ],
+    "correctAnswer": "tcp_wrappers=YES"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ POP3, ㉡ IMAP",
+      "㉠ IMAP, ㉡ POP3",
+      "㉠ SMTP, ㉡ POP3",
+      "㉠ POP3, ㉡ SMTP"
+    ],
+    "correctAnswer": "㉠ SMTP, ㉡ POP3",
+    "image": "r120190921m89.gif"
+  },
+  {
+    "question": "다음 설정에 해당하는 파일명으로 알맞은 것은?",
+    "options": [
+      "/etc/aliases",
+      "/etc/mail/access",
+      "/etc/mail/sendmail.cf",
+      "/etc/mail/local-host-names"
+    ],
+    "correctAnswer": "/etc/mail/access",
+    "image": "r120190921m90.gif"
+  },
+  {
+    "question": "다음 형식으로 설정하는 파일명으로 알맞은 것은?",
+    "options": [
+      "/etc/aliases",
+      "/etc/mail/access",
+      "/etc/mail/virtusertable",
+      "/etc/mail/local-host-names"
+    ],
+    "correctAnswer": "/etc/aliases",
+    "image": "r120190921m91.gif"
+  },
+  {
+    "question": "다음 DNS 서버를 운영하기 위해 설치해야 할 프로그램으로 알맞은 것은?",
+    "options": [
+      "bind",
+      "ypbind",
+      "dnsserver",
+      "nameserver"
+    ],
+    "correctAnswer": "bind"
+  },
+  {
+    "question": "다음 설명에 해당하는 가상화 기술로 알맞은 것은?",
+    "options": [
+      "Openstack",
+      "RHEV",
+      "Docker",
+      "VirtualBox"
+    ],
+    "correctAnswer": "Docker",
+    "image": "r120190921m93.gif"
+  },
+  {
+    "question": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+    "options": [
+      "virsh",
+      "libvirtd",
+      "virt-top",
+      "virt-manager"
+    ],
+    "correctAnswer": "virt-manager",
+    "image": "r120190921m94.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 네트워크 서비스로 알맞은 것은?",
+    "options": [
+      "VNC",
+      "NTP",
+      "DHCP",
+      "PROXY"
+    ],
+    "correctAnswer": "VNC",
+    "image": "r120190921m95.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 보안 도구로 알맞은 것은?",
+    "options": [
+      "fail2ban",
+      "Suricata",
+      "sshguard",
+      "DenyHosts"
+    ],
+    "correctAnswer": "fail2ban",
+    "image": "r120190921m96.gif"
+  },
+  {
+    "question": "다음 중 INPUT 사슬에 설정된 두 번째 정책을 제거하는 명령으로 알맞은 것은?",
+    "options": [
+      "iptables -D INPUT 2",
+      "iptables -F INPUT 2",
+      "iptables -P INPUT 2",
+      "iptables -R INPUT 2"
+    ],
+    "correctAnswer": "iptables -D INPUT 2"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "㉠ NAT, ㉡ PREROUTING",
+      "㉠ NAT, ㉡ POSTROUTING",
+      "㉠ Filter, ㉡ PREROUTING",
+      "㉠ Filter, ㉡ POSTROUTING"
+    ],
+    "correctAnswer": "㉠ NAT, ㉡ POSTROUTING",
+    "image": "r120190921m98.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 공격 유형으로 가장 알맞은 것은?",
+    "options": [
+      "Brute Force",
+      "Land Attack",
+      "DDoS Attack",
+      "TCP SYN Flooding"
+    ],
+    "correctAnswer": "Brute Force",
+    "image": "r120190921m99.gif"
+  },
+  {
+    "question": "다음 설명에 해당하는 공격 유형으로 알맞은 것은?",
+    "options": [
+      "SYN Flooding",
+      "UDP Flooding",
+      "ICMP Flooding",
+      "Teardrop Attack"
+    ],
+    "correctAnswer": "ICMP Flooding",
+    "image": "r120190921m100.gif"
+  }
+]

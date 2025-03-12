@@ -1,0 +1,1032 @@
+[
+  {
+    "question": "운영체제의 유형에 대한 설명으로 틀린 것은?",
+    "options": [
+      "Multi-switching : 다수의 작업이 동시 실행 되나 백그라운드 프로그램만 동작하는 형태",
+      "Single-tasking : 컴퓨터가 한 번에 하나의 작업만 처리하는 형태",
+      "Multi-tasking : 한 사용자가 여러 개의 작업을 동시에 수행하는 시스템",
+      "Multi-user : 단일 시스템에서 여러 사용자의 프로그램이 실행되는 형태"
+    ],
+    "correctAnswer": "Multi-switching : 다수의 작업이 동시 실행 되나 백그라운드 프로그램만 동작하는 형태"
+  },
+  {
+    "question": "다음 중 시스템 성능을 나타내는 4가지 요소에 대한 설명으로 틀린 것은?",
+    "options": [
+      "Throughput : 단위 시간당 처리 능력을 나타냄",
+      "Turnaround Time : 작업이 제출되어서 결과를 얻을 때까지의 총 소요시간",
+      "신뢰도(Reliability) : 시스템이 얼마나 정확하게 작동되는지를 나타냄",
+      "사용 가능도(Availability) : 시스템에서 얼마나 많은 오류가 발생되는지를 확인"
+    ],
+    "correctAnswer": "사용 가능도(Availability) : 시스템에서 얼마나 많은 오류가 발생되는지를 확인"
+  },
+  {
+    "question": "다음 중 운영체제의 특징에 대한 설명으로 틀린 것은?",
+    "options": [
+      "다중교환(Multi-switching) : 다수의 작업이 동시 실행되나 포그라운드 프로그램만 동작하는 형태",
+      "단일작업(Single-tasking) : 컴퓨터가 한 번에 하나의 작업만 처리하는 형태",
+      "대화형처리(Interactive Processing) : 다수의 사용자가 서로 메시지를 주고받으며 처리하는 형태",
+      "일괄처리(Batch Processing) : 여러 개의 작업을 묶어 한꺼번에 처리하는 형태"
+    ],
+    "correctAnswer": "대화형처리(Interactive Processing) : 다수의 사용자가 서로 메시지를 주고받으며 처리하는 형태"
+  },
+  {
+    "question": "리눅스의 특징으로만 짝지어진 것으로 알맞은 것은?",
+    "options": [
+      "ㄱ , ㄴ",
+      "ㄱ , ㄴ , ㄹ",
+      "ㄱ , ㄹ , ㅁ",
+      "ㄷ , ㅁ"
+    ],
+    "correctAnswer": "ㄱ , ㄹ , ㅁ",
+    "image": "r120150912m4.gif"
+  },
+  {
+    "question": "다음 중 국내 기업 또는 개인이 참여한 리눅스 배포판으로 틀린 것은?",
+    "options": [
+      "슬랙웨어(Slackware)",
+      "SULinux(Sulinux)",
+      "아시아눅스(Asianux)",
+      "안녕리눅스(AnNyung Linux)"
+    ],
+    "correctAnswer": "슬랙웨어(Slackware)"
+  },
+  {
+    "question": "다음 중 RAID(Redundant Array of Independent Disks) 종류에 대한 설명으로 틀린 것은?",
+    "options": [
+      "RAID-0 : 스트립은 가지고 있지만 데이터를 중복해서 기록하지 않는다.",
+      "RAID-1 : 중복 저장된 데이터를 가진 적어도 두 개의 드라이브로 구성된다.",
+      "RAID-5 : 패리티 정보를 저장하지만 중복저장하지 않으며 최소 2개 이상의 디스크로 구성된다.",
+      "RAID-10 : 스트립 어레이를 제공하며, RAID-1 보다 높은 성능을 제공한다."
+    ],
+    "correctAnswer": "RAID-5 : 패리티 정보를 저장하지만 중복저장하지 않으며 최소 2개 이상의 디스크로 구성된다."
+  },
+  {
+    "question": "다음 중 GRUB의 역할이 틀린 것은?",
+    "options": [
+      "GRUB는 ROM-BIOS보다 먼저 컴퓨터를 시작 할 때 수행된다.",
+      "GRUB는 실행 후에 운영체제의 커널을 RAM으로 읽어 들여 적재하는 역할을 한다.",
+      "GRUB는 하드디스크의 첫 번째 MBR(Master Boot Record)라는 곳에 저장된다.",
+      "ROM-BIOS는 하드디스크의 MBR에 있는 부트 매니저에게 제어권을 넘겨준다."
+    ],
+    "correctAnswer": "GRUB는 ROM-BIOS보다 먼저 컴퓨터를 시작 할 때 수행된다."
+  },
+  {
+    "question": "다음 중 /etc에 대한 설명으로 틀린 것은?",
+    "options": [
+      "시스템에 관한 각종 환경 설정에 연관된 파일들로 구성되어 있다.",
+      "실행 레벨과 관련된 디렉터리를 포함하고 있다.",
+      "사용자 계정 설정관련 파일을 포함하고 있다.",
+      "시스템 장치 파일을 저장하고 있다."
+    ],
+    "correctAnswer": "시스템 장치 파일을 저장하고 있다."
+  },
+  {
+    "question": "다음 중 시스템에서 사용하는 각종 프로그램들의 컴파일되지 않은 소스 파일들이 저장되어 있는 디렉터리로 알맞은 것은?",
+    "options": [
+      "/usr/src",
+      "/usr/sbin",
+      "/usr/lib",
+      "/usr/etc"
+    ],
+    "correctAnswer": "/usr/src"
+  },
+  {
+    "question": "다음 중 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "(ㄱ) GTK - (ㄴ) GTK+",
+      "(ㄱ) QT - (ㄴ) QT2",
+      "(ㄱ) KDE - (ㄴ) GNOME",
+      "(ㄱ) Xlib - (ㄴ) XCB"
+    ],
+    "correctAnswer": "(ㄱ) Xlib - (ㄴ) XCB",
+    "image": "r120150912m10.gif"
+  },
+  {
+    "question": "다음 중 프로세스의 활동 상태에 대한 설명으로 틀린 것은?",
+    "options": [
+      "지연상태",
+      "준비상태",
+      "실행상태",
+      "생성상태"
+    ],
+    "correctAnswer": "지연상태"
+  },
+  {
+    "question": "다음 중 리눅스 런레벨(Run level)을 수정하기 위해 편집하는 파일로 알맞은 것은?",
+    "options": [
+      "/etc/console",
+      "/etc/inittab",
+      "/etc/passwd",
+      "/etc/sysconfig/console"
+    ],
+    "correctAnswer": "/etc/inittab"
+  },
+  {
+    "question": "다음 중 X-window 시스템의 기본 구성 요소로 틀린 것은?",
+    "options": [
+      "서버/클라이언트",
+      "Xlib",
+      "Zlib",
+      "X Protocol"
+    ],
+    "correctAnswer": "Zlib"
+  },
+  {
+    "question": "현재 디렉터리 및 그 하위 디렉터리를 포함하여 .ini로 끝나는 파일 중 ihd라는 문자열을 포함한 파일을 찾는 명령으로 알맞은 것은?(단, 대소문자 구분 없이 검색한다.)",
+    "options": [
+      "find / -name “*.ini” | grep -l ihd",
+      "find ./ -name “*.ini” | grep –ei ihd",
+      "grep / -name *.ini | find –nl ihd",
+      "grep ./ -name *.ini | find –ni ihd"
+    ],
+    "correctAnswer": "find ./ -name “*.ini” | grep –ei ihd"
+  },
+  {
+    "question": "Shell 프로그래밍에 있어 특별 내장 변수 “$?”의설명이 알맞은 것은?",
+    "options": [
+      "최근에 실행된 프로세스의 상태값",
+      "실행된 셸스크립트명",
+      "최근에 실행한 백그라운드 명령의 프로세스의 상태값",
+      "셸스크립트의 PID"
+    ],
+    "correctAnswer": "최근에 실행된 프로세스의 상태값"
+  },
+  {
+    "question": "다음 중 데이터 링크 계층에 관한 설명으로 틀린 것은?",
+    "options": [
+      "프레이밍(Framing) : 프레임의 시작 및 끝에 불필요한 부분을 삭제한다.",
+      "오류제어 : 전송 오류를 검출하여 오류가 발생한 프레임의 재전송을 요구한다.",
+      "흐름제어 : 송신과 수신측의 프레임 처리 속도가 같지 않을 경우 흐름 제어를 수행한다.",
+      "시간제한 및 확인 : 정해진 시간 내에 확인 매시지가 안 오면 해당 프레임을 재전송한다."
+    ],
+    "correctAnswer": "프레이밍(Framing) : 프레임의 시작 및 끝에 불필요한 부분을 삭제한다."
+  },
+  {
+    "question": "다음 중 T568-B 케이블 핀번호와 색상 조합으로 틀린 것은?",
+    "options": [
+      "1핀 : 주황색/흰색",
+      "3핀 : 녹색/흰색",
+      "4핀 : 파란색",
+      "8핀 : 녹색"
+    ],
+    "correctAnswer": "8핀 : 녹색"
+  },
+  {
+    "question": "다음 중 프로토콜이 다른 통신망을 상호 접속하기 위한 장치로 알맞은 것은?",
+    "options": [
+      "브리지(Bridge)",
+      "리피터(Repeater)",
+      "게이트웨이(Gateway)",
+      "라우터(Router)"
+    ],
+    "correctAnswer": "게이트웨이(Gateway)"
+  },
+  {
+    "question": "다음 중 Listen 상태인 소켓의 정보만 보고자 할 경우 명령어로 알맞은 것은?",
+    "options": [
+      "netstat -anl",
+      "netstat -utan",
+      "netstat -utnl",
+      "netstat –utnla"
+    ],
+    "correctAnswer": "netstat -utnl"
+  },
+  {
+    "question": "다음 중 ifconfig 명령으로 알 수 없는 항목으로 알맞은 것은?",
+    "options": [
+      "MAC address",
+      "RX packets",
+      "Duplex",
+      "MTU"
+    ],
+    "correctAnswer": "Duplex"
+  },
+  {
+    "question": "다음 중 보안 강화를 위한 root 계정 관리 방법에 대한 설명으로 틀린 것은?",
+    "options": [
+      "환경 변수인 TMOUT를 설정하여 무의미하게 장시간 로그인하는 것을 막는다.",
+      "일반 사용자에게 특정 명령어 권한만을 할당해 주는 경우에는 su보다 sudo 명령을 이용하도록 한다.",
+      "root 이외에 UID가 0인 사용자를 추가해서 보안을 강화한다.",
+      "PAM을 이용하여 root 계정으로 직접 로그인하는 서비스를 제어한다."
+    ],
+    "correctAnswer": "root 이외에 UID가 0인 사용자를 추가해서 보안을 강화한다."
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "/etc/default/useradd",
+      "/home",
+      "/etc/login.defs",
+      "/etc/skel"
+    ],
+    "correctAnswer": "/etc/skel",
+    "image": "r120150912m22.gif"
+  },
+  {
+    "question": "다음 중 posein 사용자의 아이디를 yuloje로 변경 할 때 알맞은 것은?",
+    "options": [
+      "usermod –l yuloje posein",
+      "usermod –n yuloje posein",
+      "usermod –l posein yuloje",
+      "usermod –n posein yuloje"
+    ],
+    "correctAnswer": "usermod –l yuloje posein"
+  },
+  {
+    "question": "다음 중 admin 그룹의 관리자를 posein으로 지정 하는 명령으로 알맞은 것은?",
+    "options": [
+      "gpasswd –a admin posein",
+      "gpasswd –a posein admin",
+      "gpasswd –A admin posein",
+      "gpasswd –A posein admin"
+    ],
+    "correctAnswer": "gpasswd –A posein admin"
+  },
+  {
+    "question": "다음 그림에 해당하는 명령으로 알맞은 것은?",
+    "options": [
+      "w",
+      "who",
+      "id",
+      "groups"
+    ],
+    "correctAnswer": "w",
+    "image": "r120150912m25.gif"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "UUID",
+      "Set-UID",
+      "Set-GID",
+      "Sticky-Bit"
+    ],
+    "correctAnswer": "Set-UID",
+    "image": "r120150912m26.gif"
+  },
+  {
+    "question": "다음 중 joon.txt 파일의 심볼릭 링크 파일로 j를 생성할 때 알맞은 것은?",
+    "options": [
+      "ln joon.txt j",
+      "ln j joon.txt",
+      "ln -s joon.txt j",
+      "ln -s j joon.txt"
+    ],
+    "correctAnswer": "ln -s joon.txt j"
+  },
+  {
+    "question": "다음 중 /etc/fstab의 첫 번째 필드에 설정하는 값으로 틀린 것은?",
+    "options": [
+      "UUID",
+      "LABEL",
+      "마운트 포인트",
+      "장치파일명"
+    ],
+    "correctAnswer": "마운트 포인트"
+  },
+  {
+    "question": "다음 중 디스크의 사용가능한 용량을 확인할 때 사용하는 명령어로 알맞은 것은?",
+    "options": [
+      "free",
+      "df",
+      "du",
+      "quotacheck"
+    ],
+    "correctAnswer": "df"
+  },
+  {
+    "question": "다음 중 cat 명령으로 텍스트 파일에 존재하는 개행문자나 탭문자 등의 확인할 때 사용하는 옵션으로 알맞은 것은?",
+    "options": [
+      "-a",
+      "-A",
+      "-b",
+      "-n"
+    ],
+    "correctAnswer": "-A"
+  },
+  {
+    "question": "다음 중 현재 활성화된 파티션 정보를 확인할 때 참고하는 파일로 알맞은 것은?",
+    "options": [
+      "/proc/partinfo",
+      "/proc/partition",
+      "/proc/partitions",
+      "/proc/meminfo"
+    ],
+    "correctAnswer": "/proc/partitions"
+  },
+  {
+    "question": "cron 사용자 설정 파일의 내용이 다음과 같을때 관련 설명으로 알맞은 것은?",
+    "options": [
+      "root 사용자만 cron을 사용할 수 있다.",
+      "root 사용자를 포함해서 어떤 사용자도 cron을 사용할 수 없다.",
+      "일반 사용자 중에서는 posein만 cron 사용이 가능하다.",
+      "일반 사용자 중에서는 posein를 제외하고 모든 사용자가 cron 사용이 가능하다."
+    ],
+    "correctAnswer": "일반 사용자 중에서는 posein만 cron 사용이 가능하다.",
+    "image": "r120150912m32.gif"
+  },
+  {
+    "question": "다음 중 top 명령으로 확인할 수 없는 항목으로 알맞은 것은?",
+    "options": [
+      "네트워크 부하량",
+      "시스템 부하량",
+      "메모리 및 스왑 사용량",
+      "실행중인 프로세스의 개수"
+    ],
+    "correctAnswer": "네트워크 부하량"
+  },
+  {
+    "question": "다음 중 nice 명령에 대한 설명으로 틀린 것은?",
+    "options": [
+      "NI값을 지정할 때 사용한다.",
+      "값이 클수록 우선순위가 높다.",
+      "일반사용자는 우선순위를 높일 수 없다.",
+      "지정 가능한 값의 범위는 -20 ~ 19이다."
+    ],
+    "correctAnswer": "값이 클수록 우선순위가 높다."
+  },
+  {
+    "question": "다음 중 사용자가 로그아웃하거나 작업 중인 터미널 창이 닫혀도 실행중인 프로세스를 백그라운드 프로세스로 계속 작업할 수 있도록 해주는 명령으로 알맞은 것은?",
+    "options": [
+      "bg",
+      "fg",
+      "hup",
+      "nohup"
+    ],
+    "correctAnswer": "nohup"
+  },
+  {
+    "question": "다음 중 설치된 파일로 rpm 패키지 이름을 확인하려고 할 때 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "-qa",
+      "-qc",
+      "-qf",
+      "-qp"
+    ],
+    "correctAnswer": "-qf",
+    "image": "r120150912m36.gif"
+  },
+  {
+    "question": "다음 중 yum 명령으로 music이라는 문자열이 포함된 패키지를 찾으려고 할 때 알맞은 것은?",
+    "options": [
+      "yum search music",
+      "yum list music",
+      "yum info music",
+      "yum find music"
+    ],
+    "correctAnswer": "yum search music"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "(ㄱ) yum (ㄴ) apt-get",
+      "(ㄱ) apt-get (ㄴ) yum",
+      "(ㄱ) apt-get (ㄴ) yast",
+      "(ㄱ) yum (ㄴ) yast"
+    ],
+    "correctAnswer": "(ㄱ) apt-get (ㄴ) yum",
+    "image": "r120150912m38.gif"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "zxvf",
+      "jxvf",
+      "Jxvf",
+      "Zxvf"
+    ],
+    "correctAnswer": "Jxvf",
+    "image": "r120150912m39.gif"
+  },
+  {
+    "question": "다음 중 압축률이 높은 순서로 나열한 것으로 알맞은 것은?",
+    "options": [
+      "compress > gzip > bzip2 > xz",
+      "compress > bzip2 > gzip > xz",
+      "xz > gzip > bzip2 > compress",
+      "xz > bzip2 > gzip > compress"
+    ],
+    "correctAnswer": "xz > bzip2 > gzip > compress"
+  },
+  {
+    "question": "리눅스에서의 장치 설정 중 플러그 앤 플레이(PnP) 기능에 관한 설명이 틀린 것은?",
+    "options": [
+      "모뎀과 네트워크 카드, 사운드 카드 등의 각종 하드웨어(장치)를 찾아낸 장소를 자동적으로 소프트웨어에 알려준다.",
+      "물리적 장치와 이것을 조작하는 소프트웨어(장치 드라이버)와 일치시킨다.",
+      "운영체제가 물리적 장치를 인식할 수 있게하는 소프트웨어이다.",
+      "장치와 드라이버 사이에 통신 채널을 만든다."
+    ],
+    "correctAnswer": "장치와 드라이버 사이에 통신 채널을 만든다."
+  },
+  {
+    "question": "다음 중 커널모듈을 로드하는 명령어로 알맞은 것은?",
+    "options": [
+      "modprobe",
+      "lsmod",
+      "rmmod",
+      "inmod"
+    ],
+    "correctAnswer": "modprobe"
+  },
+  {
+    "question": "다음 중 리눅스 부팅 시 자동으로 마운트 되도록 설정하는 파일로 알맞은 것은?",
+    "options": [
+      "/etc/grub",
+      "/etc/fstab",
+      "/etc/inittab",
+      "/etc/autofs"
+    ],
+    "correctAnswer": "/etc/fstab"
+  },
+  {
+    "question": "다음 중 스캐너를 사용하려고 할 때 관련 패키지 설치 명령으로 알맞은 것은?",
+    "options": [
+      "yum install sane",
+      "yum install scanner",
+      "yum install scan",
+      "yum install xscand"
+    ],
+    "correctAnswer": "yum install sane"
+  },
+  {
+    "question": "다음 중 프린터 작업 상태를 확인 할 수 있는 명령으로 알맞은 것은?",
+    "options": [
+      "lpstat",
+      "lprm",
+      "pr",
+      "lpr"
+    ],
+    "correctAnswer": "lpstat"
+  },
+  {
+    "question": "다음 중 셸 환경에서 text.txt 파일의 내용을 출력하는 명령으로 알맞은 것은?",
+    "options": [
+      "lpc text.txt",
+      "pr text.txt",
+      "cat text.txt | printer",
+      "cat text.txt > /dev/lp"
+    ],
+    "correctAnswer": "cat text.txt > /dev/lp"
+  },
+  {
+    "question": "다음 중 커널에서 제공하는 파일 시스템 정보를 확인 할 때 참고하는 파일로 알맞은 것은?",
+    "options": [
+      "/proc/filesystems",
+      "/etc/filesystem",
+      "/etc/fstab",
+      "/etc/system/fssys"
+    ],
+    "correctAnswer": "/proc/filesystems"
+  },
+  {
+    "question": "다음 중 부팅 시 네트워크 관련 모듈을 자동으로 적재하기 위해 사용되는 파일 또는 디렉터리로 알맞은 것은?",
+    "options": [
+      "/etc/inittab",
+      "/etc/modprobe.d",
+      "/etc/services",
+      "/etc/my.cnf"
+    ],
+    "correctAnswer": "/etc/modprobe.d"
+  },
+  {
+    "question": "다음 중 커널을 재컴파일 하기 위해 오브젝트 및 .config 파일을 삭제하는 명령으로 알맞은 것은?",
+    "options": [
+      "make clean",
+      "make menuconfig",
+      "make mrproper",
+      "make config"
+    ],
+    "correctAnswer": "make mrproper"
+  },
+  {
+    "question": "다음 중 선택된 커널 모듈을 컴파일하는 명령으로 알맞은 것은?",
+    "options": [
+      "make bzImage",
+      "make modules",
+      "make install",
+      "make modules_install"
+    ],
+    "correctAnswer": "make modules"
+  },
+  {
+    "question": "다음 중 /etc/rsyslog.conf 파일에서 ssh와 같이 인증이 필요한 프로그램에서 발생한 메시지를 처리하는 facility로 가장 알맞은 것은?",
+    "options": [
+      "auth",
+      "authpriv",
+      "daemon",
+      "syslog"
+    ],
+    "correctAnswer": "authpriv"
+  },
+  {
+    "question": "다음 중 logrotate에 대한 설명으로 틀린 것은?",
+    "options": [
+      "cron에 의해 스케줄링되어 실행된다.",
+      "로그 파일 압축은 제공하지 않는다.",
+      "로그 파일은 하루, 일주일, 한달 단위로 로테이션 할 수 있다.",
+      "파일 크기의 제한을 통해 로테이션 할 수 있다."
+    ],
+    "correctAnswer": "로그 파일 압축은 제공하지 않는다."
+  },
+  {
+    "question": "다음 중 /var/log/secure 파일에 쌓이는 로그 기록과 가장 거리가 먼 것은?",
+    "options": [
+      "telnet",
+      "ftp",
+      "ssh",
+      "xinetd"
+    ],
+    "correctAnswer": "ftp"
+  },
+  {
+    "question": "다음 중 접속에 실패한 기록만을 확인할 때 사용하는 명령으로 알맞은 것은?",
+    "options": [
+      "last",
+      "lastb",
+      "lastw",
+      "lastlog"
+    ],
+    "correctAnswer": "lastb"
+  },
+  {
+    "question": "다음은 grub.conf 파일의 일부로 싱글모드 사용자 접근을 막기 위해 암호를 설정하는 과정이다. ( 괄호 )안에 들어간 내용으로 알맞은 것은?",
+    "options": [
+      "(ㄱ) passwd (ㄴ) --md5",
+      "(ㄱ) passwd (ㄴ) --crypt",
+      "(ㄱ) password (ㄴ) --md5",
+      "(ㄱ) password (ㄴ) --crypt"
+    ],
+    "correctAnswer": "(ㄱ) password (ㄴ) --md5",
+    "image": "r120150912m55.gif"
+  },
+  {
+    "question": "ping 응답하지 않기 위해 커널 파라미터값을 조정하려고 한다. 다음 중 관련 명령으로 알맞은 것은?",
+    "options": [
+      "sysctl –w net.ipv4.icmp_echo_ignore_all=0",
+      "sysctl –w net.ipv4.icmp_echo_ignore_all=1",
+      "sysctl –n net.ipv4.icmp_echo_ignore_all=0",
+      "sysctl –n net.ipv4.icmp_echo_ignore_all=1"
+    ],
+    "correctAnswer": "sysctl –w net.ipv4.icmp_echo_ignore_all=1"
+  },
+  {
+    "question": "다음 중 SELinux 설정 상태를 확인하는 명령으로 알맞은 것은?",
+    "options": [
+      "getenforce",
+      "setenforce",
+      "selinux",
+      "setselinux"
+    ],
+    "correctAnswer": "getenforce"
+  },
+  {
+    "question": "다음 중 리눅스에서 백업 대상이 되는 디렉터리로 가장 거리가 먼 것은?",
+    "options": [
+      "/etc",
+      "/usr",
+      "/var",
+      "/sys"
+    ],
+    "correctAnswer": "/sys"
+  },
+  {
+    "question": "다음은 tar 명령을 이용하여 증분 백업하는 예이다. ( 괄호 ) 안에 들어갈 옵션으로 알맞은 것은?",
+    "options": [
+      "-g",
+      "-L",
+      "-N",
+      "-C"
+    ],
+    "correctAnswer": "-g",
+    "image": "r120150912m59.gif"
+  },
+  {
+    "question": "다음 중 dd 명령어에 대한 설명으로 틀린 것은?",
+    "options": [
+      "디스크 단위로 백업할 때 사용한다.",
+      "파티션 단위로 백업할 때 사용한다.",
+      "디렉터리 단위로 백업할 때 사용한다.",
+      "소문자로 이루어진 텍스트 파일을 전부 대문자로 전환할 때 사용한다."
+    ],
+    "correctAnswer": "디렉터리 단위로 백업할 때 사용한다."
+  },
+  {
+    "question": "다음 중 아파치 웹 서버에 대한 설명으로 틀린 것은?",
+    "options": [
+      "소스가 공개되어 있는 공개 소프트웨어이다.",
+      "리눅스 및 유닉스 계열만 지원하는 웹 서버 프로그램이다.",
+      "멀티스레딩(Multi-threading)을 지원한다.",
+      "PHP, JSP 등 다양한 웹 프로그래밍 언어를 지원한다."
+    ],
+    "correctAnswer": "리눅스 및 유닉스 계열만 지원하는 웹 서버 프로그램이다."
+  },
+  {
+    "question": "다음 HTTP 관련 상태 코드 중 “Not Found”를 나타내는 코드로 알맞은 것은?",
+    "options": [
+      "401",
+      "402",
+      "403",
+      "404"
+    ],
+    "correctAnswer": "404"
+  },
+  {
+    "question": "다음 중 아파치 웹 서버 2.2 버전에서 포트 번호를 나타내는 항목으로 알맞은 것은?",
+    "options": [
+      "Port 80",
+      "http_port 80",
+      "Listen 80",
+      "Service 80"
+    ],
+    "correctAnswer": "Listen 80"
+  },
+  {
+    "question": "웹 문서가 위치하는 디렉터리를 “/usr/local/apache/web”으로 변경하려고 한다. 다음 중 httpd.conf 파일에서 설정해야 하는 항목으로 알맞은 것은?",
+    "options": [
+      "ServerRoot",
+      "DocumentRoot",
+      "DirectoryIndex",
+      "IndexRoot"
+    ],
+    "correctAnswer": "DocumentRoot"
+  },
+  {
+    "question": "다음은 MySQL을 소스 파일로 설치하는 과정이다. ( 괄호 ) 안에 들어갈 명령으로 알맞은 것은?",
+    "options": [
+      "./configure",
+      "./configure .",
+      "cmake",
+      "cmake ."
+    ],
+    "correctAnswer": "cmake .",
+    "image": "r120150912m65.gif"
+  },
+  {
+    "question": "다음은 NIS 관련 설명이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "(ㄱ) RPC (ㄴ) rpcbind (ㄷ) portmap",
+      "(ㄱ) RPC (ㄴ) portmap (ㄷ) rpcbind",
+      "(ㄱ) BIND (ㄴ) rpcbind (ㄷ) portmap",
+      "(ㄱ) BIND (ㄴ) portmap (ㄷ) rpcbind"
+    ],
+    "correctAnswer": "(ㄱ) RPC (ㄴ) portmap (ㄷ) rpcbind",
+    "image": "r120150912m66.gif"
+  },
+  {
+    "question": "다음 LDAP 속성 중 이름과 성의 조합을 나타내는 키워드로 알맞은 것은?",
+    "options": [
+      "cn",
+      "sn",
+      "dc",
+      "givenName"
+    ],
+    "correctAnswer": "cn"
+  },
+  {
+    "question": "다음 중 NIS 서버명과 관련 맵 파일을 출력할 때 사용하는 NIS 클라이언트 명령으로 알맞은 것은?",
+    "options": [
+      "ypbind",
+      "ypcat",
+      "yptest",
+      "ypwhich"
+    ],
+    "correctAnswer": "ypwhich"
+  },
+  {
+    "question": "다음 중 NIS 서버에서 관련 맵 파일이 생성되는 디렉터리로 알맞은 것은?",
+    "options": [
+      "/var/yp",
+      "/usr/yp",
+      "/var/ypserv",
+      "/usr/ypserv"
+    ],
+    "correctAnswer": "/var/yp"
+  },
+  {
+    "question": "다음 중 NIS 클라이언트에서 NIS 서버 및 도메인명을 설정하는 파일로 알맞은 것은?",
+    "options": [
+      "/etc/yp.conf",
+      "/etc/ypserv.conf",
+      "/etc/ypbind.conf",
+      "/etc/ypxfrd.conf"
+    ],
+    "correctAnswer": "/etc/yp.conf"
+  },
+  {
+    "question": "다음 중 smb.conf에 대한 설명으로 틀린 것은?",
+    "options": [
+      "특정 섹션의 정의는 [ ]을 사용한다.",
+      "각 행이 끝날 때는 세미콜론(;)을 덧붙여야 한다.",
+      "#으로 시작하는 행은 주석으로 간주되어 무시된다.",
+      "항목과 값의 설정은 ‘name = value’ 형식으로 지정한다."
+    ],
+    "correctAnswer": "각 행이 끝날 때는 세미콜론(;)을 덧붙여야 한다."
+  },
+  {
+    "question": "posein이라는 삼바 사용자를 암호 입력 없이 로그인 되도록 설정하려고 한다. 다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "-d",
+      "-e",
+      "-n",
+      "-x"
+    ],
+    "correctAnswer": "-n",
+    "image": "r120150912m72.gif"
+  },
+  {
+    "question": "다음에서 설명하는 NFS 서버 설정 옵션으로 알맞은 것은?",
+    "options": [
+      "anonuid",
+      "all_squash",
+      "root_squash",
+      "no_root_squash"
+    ],
+    "correctAnswer": "all_squash",
+    "image": "r120150912m73.gif"
+  },
+  {
+    "question": "NFS 서버에서 익스포트된 정보를 확인하려고 한다. 다음 ( 괄호 ) 안에 들어갈 명령으로 알맞은 것은?",
+    "options": [
+      "rpcinfo",
+      "nfsstat",
+      "exportfs",
+      "showmount"
+    ],
+    "correctAnswer": "exportfs",
+    "image": "r120150912m74.gif"
+  },
+  {
+    "question": "다음 중 vsftpd.conf 설정에서 접속한 사용자의 홈 디렉터리를 최상위 디렉터리로 지정하려고 할 때 관련 항목으로 알맞은 것은?",
+    "options": [
+      "chroot_user=YES",
+      "chroot_local=YES",
+      "chroot_user_local=YES",
+      "chroot_local_user=YES"
+    ],
+    "correctAnswer": "chroot_local_user=YES"
+  },
+  {
+    "question": "다음 중 메일과 관련된 프로토콜로 가장 거리가 먼 것은?",
+    "options": [
+      "SNMP",
+      "SMTP",
+      "IMAP",
+      "POP3"
+    ],
+    "correctAnswer": "SNMP"
+  },
+  {
+    "question": "다음 중 메일 서버 관련 프로그램으로 틀린 것은?",
+    "options": [
+      "qmail",
+      "sendmail",
+      "postfix",
+      "evolution"
+    ],
+    "correctAnswer": "evolution"
+  },
+  {
+    "question": "다음은 sendmail.cf 파일을 복원하는 과정이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "m4",
+      "sendmail",
+      "newaliases",
+      "makemap hash"
+    ],
+    "correctAnswer": "m4",
+    "image": "r120150912m78.gif"
+  },
+  {
+    "question": "다음 설명과 관련 있는 파일로 알맞은 것은?",
+    "options": [
+      "/etc/aliases",
+      "/etc/mail/access",
+      "/etc/mail/virtusertable",
+      "/etc/mail/local-host-names"
+    ],
+    "correctAnswer": "/etc/mail/virtusertable",
+    "image": "r120150912m79.gif"
+  },
+  {
+    "question": "다음 ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      ".mail",
+      ".email",
+      ".forward",
+      ".procmail"
+    ],
+    "correctAnswer": ".forward",
+    "image": "r120150912m80.gif"
+  },
+  {
+    "question": "다음 중 DNS 서버에 대한 설명으로 틀린 것은?",
+    "options": [
+      "도메인을 운영하기 위해서는 반드시 Primary Name Server는 구성해야 한다.",
+      "Secondary Name Server는 Primary Name Server의 존 파일을 백업하는 역할을 수행한다.",
+      "Caching Name Server를 구성하면 인터넷 사용 속도를 높일 수 있다.",
+      "Caching Name Server는 반드시 도메인이 있어야 구성할 수 있다."
+    ],
+    "correctAnswer": "Caching Name Server는 반드시 도메인이 있어야 구성할 수 있다."
+  },
+  {
+    "question": "다음 중 bind-chroot 패키지를 설치했을 때 존(zone) 파일을 생성해야할 디렉터리로 알맞은 것은?",
+    "options": [
+      "/var/named",
+      "/chroot/var/named",
+      "/var/named/chroot",
+      "/var/named/chroot/var/named"
+    ],
+    "correctAnswer": "/var/named/chroot/var/named"
+  },
+  {
+    "question": "다음 중 /etc/named.conf 파일에서 주석 구문으로 사용하는 특수문자로 틀린 것은?",
+    "options": [
+      ";",
+      "//",
+      "#",
+      "/* */"
+    ],
+    "correctAnswer": ";"
+  },
+  {
+    "question": "다음은 /etc/named.conf 파일의 내용이다. ( 괄호 )안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "(ㄱ) acl (ㄴ) zone",
+      "(ㄱ) view (ㄴ) zones",
+      "(ㄱ) key (ㄴ) zone",
+      "(ㄱ) controls (ㄴ) zones"
+    ],
+    "correctAnswer": "(ㄱ) acl (ㄴ) zone",
+    "image": "r120150912m84.gif"
+  },
+  {
+    "question": "다음 중 존(zone) 파일에서 IPv6 주소를 기입하기 위해 사용되는 레코드 타입으로 알맞은 것은?",
+    "options": [
+      "A",
+      "AA",
+      "AAA",
+      "AAAA"
+    ],
+    "correctAnswer": "AAAA"
+  },
+  {
+    "question": "다음에서 설명하는 가상화 효과로 알맞은 것은?",
+    "options": [
+      "향상된 보안",
+      "높아진 가용성",
+      "증가된 확장성",
+      "향상된 프로비저닝"
+    ],
+    "correctAnswer": "향상된 프로비저닝",
+    "image": "r120150912m86.gif"
+  },
+  {
+    "question": "다음에서 설명하는 가상화 기능으로 알맞은 것은?",
+    "options": [
+      "공유",
+      "절연",
+      "단일화",
+      "에뮬레이션"
+    ],
+    "correctAnswer": "에뮬레이션",
+    "image": "r120150912m87.gif"
+  },
+  {
+    "question": "다음 설명과 관련 있는 가상화 프로그램으로 알맞은 것은?",
+    "options": [
+      "Docker",
+      "Hyper-V",
+      "OpenStack",
+      "VirtualBox"
+    ],
+    "correctAnswer": "OpenStack",
+    "image": "r120150912m88.gif"
+  },
+  {
+    "question": "리눅스 서버에 장착된 CPU의 가상화 지원 여부를 확인하려고 한다. 다음 중 관련 파일로 알맞은 것은?",
+    "options": [
+      "/proc/cmdline",
+      "/proc/cpuinfo",
+      "/proc/stat",
+      "/proc/cpustat"
+    ],
+    "correctAnswer": "/proc/cpuinfo"
+  },
+  {
+    "question": "다음 중 셸 명령행 기반으로 가상 머신을 생성, 상태 정보 출력, 일시 정지 등의 기능을 제공하는 명령으로 알맞은 것은?",
+    "options": [
+      "virt-manager",
+      "virt-top",
+      "virsh",
+      "libvirtd"
+    ],
+    "correctAnswer": "virsh"
+  },
+  {
+    "question": "운영 중인 텔넷 및 rsync 서비스를 긴급히 중단 시키려고 한다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "deny",
+      "disable",
+      "disabled",
+      "services"
+    ],
+    "correctAnswer": "disabled",
+    "image": "r120150912m91.gif"
+  },
+  {
+    "question": "운영 중인 텔넷 서비스의 이용 시간을 제한하려고 한다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "allow_time",
+      "allow_times",
+      "access_time",
+      "access_times"
+    ],
+    "correctAnswer": "access_times",
+    "image": "r120150912m92.gif"
+  },
+  {
+    "question": "다음은 squid.conf 파일의 일부이다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "port",
+      "listen",
+      "http_port",
+      "squid_port"
+    ],
+    "correctAnswer": "http_port",
+    "image": "r120150912m93.gif"
+  },
+  {
+    "question": "다음 중 dhcpd.conf 파일에서 할당하려는 IP 주소 대역을 지정하는 설정으로 알맞은 것은?",
+    "options": [
+      "range 192.168.1.2 192.168.1.254",
+      "range 192.168.1.2-192.168.1.254",
+      "range 192.168.1.2:192.168.1.254",
+      "range 192.168.1.2~192.168.1.254"
+    ],
+    "correctAnswer": "range 192.168.1.2 192.168.1.254"
+  },
+  {
+    "question": "다음 설명과 관련 있는 서버로 알맞은 것은?",
+    "options": [
+      "VNC",
+      "NTP",
+      "DHCP",
+      "PROXY"
+    ],
+    "correctAnswer": "VNC",
+    "image": "r120150912m95.gif"
+  },
+  {
+    "question": "다음에서 설명하는 DOS 공격으로 알맞은 것은?",
+    "options": [
+      "Teardrop Attack",
+      "Ping of Death",
+      "Land Attack",
+      "Smurf Attack"
+    ],
+    "correctAnswer": "Teardrop Attack",
+    "image": "r120150912m96.gif"
+  },
+  {
+    "question": "다음 프로그램 소스와 관련 있는 DOS 공격으로 알맞은 것은?",
+    "options": [
+      "가용 디스크 자원 고갈",
+      "가용 메모리 자원 고갈",
+      "가용 프로세스 자원 고갈",
+      "네트워크 대역폭 고갈"
+    ],
+    "correctAnswer": "가용 프로세스 자원 고갈",
+    "image": "r120150912m97.gif"
+  },
+  {
+    "question": "다음 중 IDS 및 IPS 도구로 알맞은 것은?",
+    "options": [
+      "iptables",
+      "Suricata",
+      "PAM",
+      "tcpdump"
+    ],
+    "correctAnswer": "Suricata"
+  },
+  {
+    "question": "다음 중 IP 주소 기반의 차단 기능을 제공하는 프로그램으로 가장 거리가 먼 것은?",
+    "options": [
+      "iptables",
+      "TCP wrapper",
+      "PAM",
+      "xinetd"
+    ],
+    "correctAnswer": "PAM"
+  },
+  {
+    "question": "들어오는 패킷을 버리는 것과 동시에 적당한 응답 패킷이나 메시지를 전달하려 한다. ( 괄호 ) 안에 들어갈 내용으로 알맞은 것은?",
+    "options": [
+      "ACCEPT",
+      "DROP",
+      "DENY",
+      "REJECT"
+    ],
+    "correctAnswer": "REJECT",
+    "image": "r120150912m100.gif"
+  }
+]
