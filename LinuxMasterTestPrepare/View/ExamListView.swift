@@ -18,7 +18,6 @@ struct ExamListView: View {
                 ForEach(vm.listName(), id: \.self) { name in
                     Button(action: {
                         self.selectName = name
-                        self.isSheet.toggle()
                     }) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text(name)
@@ -51,10 +50,17 @@ struct ExamListView: View {
             .padding(.vertical, 16)
         }
         .background(Color(UIColor.systemBackground).ignoresSafeArea())
+        .onChange(of: selectName, { oldValue, newValue in
+            if oldValue != newValue {
+                self.isSheet.toggle()
+            }
+        })
         .sheet(isPresented: $isSheet) {
             NavigationStack {
                 ExamSubjectSelectView(vm: .init(examName: selectName))
                     .environment(navigationData)
+                    .navigationTitle(selectName)
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }

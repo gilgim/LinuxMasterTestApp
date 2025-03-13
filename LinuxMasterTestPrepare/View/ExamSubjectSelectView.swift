@@ -219,8 +219,6 @@ struct ExamSubjectSelectView: View {
         }
         .padding(.vertical)
         .padding(.horizontal, 16)
-        .navigationTitle(vm.examName)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
