@@ -39,10 +39,6 @@ struct LinuxMasterMainView: View {
                 }
                 .navigationDestination(for: NavigationPathKey.self) { navigationType in
                     switch navigationType {
-                    case .subjectSelect(let examName):
-                        ExamSubjectSelectView(vm: .init(examName: examName))
-                            .environment(examListNavigationData)
-                            .navigationTitle("과목 선택")
                     case .exam(let examName, let examType, let selectSubject):
                         ExamView(vm: .init(examName: examName, examType: examType, selectSubject: selectSubject))
                             .environment(examListNavigationData)

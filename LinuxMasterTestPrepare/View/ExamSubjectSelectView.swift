@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExamSubjectSelectView: View {
     @Environment(NavigationData.self) var navigationData
+    @Environment(\.dismiss) var dismiss
     @State var vm: ExamSubjectSelectViewModel
     
     init(vm: ExamSubjectSelectViewModel = .init(examName: "2015_03_14")) {
@@ -16,169 +17,216 @@ struct ExamSubjectSelectView: View {
     }
     
     var body: some View {
-        VStack(spacing: 32) {
-            // 제목 및 시험 이름
-            Text(vm.examName)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.top, 24)
-            
-            // 과목 선택 영역
-            VStack(alignment: .leading, spacing: 16) {
-                Text("과목 선택")
-                    .font(.headline)
-                    .padding(.horizontal)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(SubjectType.allCases, id: \.self) { subject in
-                            Text(subject.rawValue)
-                                .fontWeight(.medium)
-                                .padding(.vertical, 12)
-                                .padding(.horizontal, 20)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(vm.selectSubject(type: subject)
-                                                ? Color.blue.opacity(0.8)
-                                                : Color.gray.opacity(0.1))
-                                )
-                                .foregroundColor(vm.selectSubject(type: subject) ? .white : .primary)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(vm.selectSubject(type: subject)
-                                                    ? Color.blue.opacity(0.8)
-                                                    : Color.clear, lineWidth: 1)
-                                )
-                                .shadow(color: vm.selectSubject(type: subject)
-                                            ? Color.blue.opacity(0.3)
-                                            : Color.clear, radius: 4, x: 0, y: 2)
-                                .onTapGesture {
-                                    withAnimation {
-                                        vm.checkSubject(type: subject)
-                                    }
-                                }
+        VStack(alignment: .leading, spacing: 0) {
+            //  과목별 정보
+            HStack {
+                ForEach(SubjectType.allCases, id: \.self) { subject in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(subject.rawValue)
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(.primary)
+                        HStack {
+                            MetricView(title: "오답률", value: "0%")
+                            MetricView(title: "정답률", value: "0%")
                         }
                     }
-                    .padding(.horizontal)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(UIColor.secondarySystemBackground))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(UIColor.separator), lineWidth: 1)
+                    )
                 }
             }
             
-            // 이전 시험 영역
-            if vm.checkPrevioseTest() {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("이전 시험")
-                        .font(.headline)
-                        .padding(.horizontal)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 16) {
-                            ForEach(vm.previousExamData(), id: \.self) { exam in
-                                Button(action: {
-                                    navigationData.path.append(NavigationPathKey.previousExam(examData: exam))
-                                }) {
-                                    VStack(spacing: 8) {
-                                        Text(exam.examName)
-                                            .font(.subheadline)
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.primary)
-                                        Text("이전 문제 풀기")
-                                            .font(.caption)
-                                            .fontWeight(.medium)
-                                            .foregroundColor(.blue)
-                                            .padding(.vertical, 4)
-                                            .padding(.horizontal, 8)
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .stroke(Color.blue, lineWidth: 1)
-                                            )
-                                    }
-                                    .padding()
-                                    .background(Color(UIColor.systemGray6))
-                                    .cornerRadius(12)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                            }
+            // 과목 선택 영역
+            VStack(alignment: .leading, spacing: 6) {
+                Text("과목 선택")
+                    .font(.headline)
+                ForEach(SubjectType.allCases, id: \.self) { subject in
+                    HStack {
+                        HStack {
+                            Image(systemName: vm.selectSubject(type: subject) ? "checkmark.square.fill" : "square")
+                                .resizable()
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.white, .purple)
+                                .frame(width: 20, height: 20)
+                            Text(subject.rawValue)
                         }
-                        .padding(.horizontal)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 8)
+                        .background(vm.selectSubject(type: subject) ? Color.purple.opacity(0.24) : Color.black.opacity(0.12))
+                        .clipShape(.buttonBorder)
+                        Spacer()
+                    }
+                    .onTapGesture {
+                        vm.checkSubject(type: subject)
                     }
                 }
+            }
+            .padding(.top, 24)
+            
+            // 이전 시험 영역
+            Text("이전 시험")
+                .font(.headline)
+                .padding(.top, 24)
+            if vm.checkPrevioseTest() {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 16) {
+                        ForEach(vm.previousExamData(), id: \.self) { exam in
+                            Button(action: {
+                                dismiss()
+                                navigationData.path.append(NavigationPathKey.previousExam(examData: exam))
+                            }) {
+                                VStack(spacing: 8) {
+                                    Text(exam.examName)
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.primary)
+                                    Text("이전 문제 풀기")
+                                        .font(.caption)
+                                        .fontWeight(.medium)
+                                        .foregroundColor(.blue)
+                                        .padding(.vertical, 4)
+                                        .padding(.horizontal, 8)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .stroke(Color.blue, lineWidth: 1)
+                                        )
+                                }
+                                .padding()
+                                .background(Color(UIColor.systemGray6))
+                                .cornerRadius(12)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+            } else {
+                HStack(spacing: 8) {
+                    Image(systemName: "pencil.and.scribble")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.gray)
+                    Text("진행 중인 시험이 없습니다.\n시험을 중단한 경우라면 다시 진행할 수 있습니다.")
+                        .font(.caption)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.gray)
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color(UIColor.tertiarySystemBackground))
+                .cornerRadius(12)
+                .padding(.top, 12)
             }
             
             // 강제종료 시험 영역
+            Text("마저풀기")
+                .font(.headline)
+                .padding(.top, 32)
             if vm.checkForceQuitTest() {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("마저 풀기")
-                        .font(.headline)
-                        .padding(.horizontal)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 16) {
-                            ForEach(vm.forceQuitExamData(), id: \.self) { exam in
-                                Button(action: {
-                                    navigationData.path.append(NavigationPathKey.forceQuitExam(examData: exam))
-                                }) {
-                                    VStack(spacing: 8) {
-                                        Text(exam.examName)
-                                            .font(.subheadline)
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.primary)
-                                        Text("마저 풀기")
-                                            .font(.caption)
-                                            .fontWeight(.medium)
-                                            .foregroundColor(.red)
-                                            .padding(.vertical, 4)
-                                            .padding(.horizontal, 8)
-                                            .background(
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .stroke(Color.red, lineWidth: 1)
-                                            )
-                                    }
-                                    .padding()
-                                    .background(Color(UIColor.systemGray6))
-                                    .cornerRadius(12)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 16) {
+                        ForEach(vm.forceQuitExamData(), id: \.self) { exam in
+                            Button(action: {
+                                dismiss()
+                                navigationData.path.append(NavigationPathKey.forceQuitExam(examData: exam))
+                            }) {
+                                VStack(spacing: 8) {
+                                    Text(exam.examName)
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.primary)
+                                    Text("마저 풀기")
+                                        .font(.caption)
+                                        .fontWeight(.medium)
+                                        .foregroundColor(.red)
+                                        .padding(.vertical, 4)
+                                        .padding(.horizontal, 8)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .stroke(Color.red, lineWidth: 1)
+                                        )
                                 }
-                                .buttonStyle(PlainButtonStyle())
+                                .padding()
+                                .background(Color(UIColor.systemGray6))
+                                .cornerRadius(12)
                             }
+                            .buttonStyle(PlainButtonStyle())
                         }
-                        .padding(.horizontal)
                     }
+                    .padding(.horizontal)
                 }
+            } else {
+                HStack(spacing: 8) {
+                    Image(systemName: "xmark.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                        .foregroundColor(.gray)
+                    Text("강제 종료된 시험이 없습니다.\n강제 종료된 시험이 있을 경우 다시 진행할 수 있습니다.")
+                        .font(.caption)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.gray)
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color(UIColor.tertiarySystemBackground))
+                .cornerRadius(12)
+                .padding(.top, 20)
             }
-            
+            Spacer()
             // 액션 버튼 영역
             HStack(spacing: 16) {
                 Button(action: {
+                    dismiss()
                     navigationData.path.append(NavigationPathKey.exam(examName: vm.examName, examType: .practice, subjectType: vm.selectSubjects))
                 }) {
                     Text("문제풀기")
                         .fontWeight(.semibold)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .shadow(radius: 3)
+                        .background(
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .foregroundStyle(.white)
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(lineWidth: 3)
+                            }
+                        )
+                        .foregroundColor(Color.purple)
                 }
                 
                 Button(action: {
+                    dismiss()
                     navigationData.path.append(NavigationPathKey.exam(examName: vm.examName, examType: .test, subjectType: vm.selectSubjects))
                 }) {
                     Text("시험보기")
                         .fontWeight(.semibold)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.orange)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .shadow(radius: 3)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundStyle(.purple)
+                        )
+                        .foregroundColor(Color.white)
                 }
             }
-            .padding(.horizontal)
-            Spacer()
         }
         .padding(.vertical)
+        .padding(.horizontal, 16)
+        .navigationTitle(vm.examName)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    ExamSubjectSelectView()
-        .environment(NavigationData())
+    NavigationStack {
+        ExamSubjectSelectView()
+            .environment(NavigationData())
+    }
 }
