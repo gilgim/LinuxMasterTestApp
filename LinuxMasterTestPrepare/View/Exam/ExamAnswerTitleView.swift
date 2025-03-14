@@ -36,3 +36,10 @@ struct ExamAnswerTitleView: View {
         }
     }
 }
+
+#Preview {
+    let vm = ExamViewModel(examName: "2015_03_14", examType: .test, selectSubject: [.subject1, .subject2, .subject3])
+    let questionData = vm.questions().first!
+    ExamAnswerTitleView(questionNumber: 1, questionData: questionData)
+        .environment(vm)
+}

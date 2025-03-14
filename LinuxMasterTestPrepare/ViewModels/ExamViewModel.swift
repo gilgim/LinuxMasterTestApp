@@ -27,6 +27,7 @@ class ExamViewModel {
     
     //  MARK: Public Property
     public var currentQuestion: Int = 0
+    public var isAnsweredQuestion: Bool { return !(userAnswers.isEmpty)}
     public var isTestFinish: Bool { return confirmAnswers.count == self.questions().count }
     init(examData: ExamData? = nil, examName: String? = nil, examType: ExamType? = nil, selectSubject: [SubjectType] = []) {
         //  시험을 이어서 보는 경우
@@ -36,6 +37,7 @@ class ExamViewModel {
             self.selectSubject = examData.selectSubjectsTypes
             self.examData = examData
             self.userAnswers = examData.userAnswers
+            self.confirmAnswers = examData.confirmAnswers
         //  시험을 신규로 보는 경우
         } else if let examName, let examType {
             self.examName = examName
@@ -112,8 +114,41 @@ class ExamViewModel {
         }
     }
     //  MARK: Data
+    //  시험 완료 저장
     private func finishExam() {
         Task { @MainActor in
+            self.examData.userAnswers = self.userAnswers
+            self.examData.confirmAnswers = self.confirmAnswers
+            try SwiftDataManager.update(self.examData)
+        }
+    }
+    //  시험 중간 저장
+    func saveExam() {
+        Task { @MainActor in
+            if self.isPractice {
+                self.examData.examType = .previousPractice
+                self.examData.confirmAnswers = self.confirmAnswers
+            } else {
+                self.examData.examType = .previousTest
+            }
+            self.examData.userAnswers = self.userAnswers
+            try SwiftDataManager.update(self.examData)
+        }
+    }
+    func cancelExam() {
+        Task { @MainActor in
+            try SwiftDataManager.delete(self.examData)
+        }
+    }
+    //  강제 종료 방지
+    func forcePreventExam() {
+        Task { @MainActor in
+            if self.isPractice {
+                self.examData.examType = .forceQuitPractice
+            } else {
+                self.examData.examType = .forceQuitTest
+            }
+            self.examData.userAnswers = self.userAnswers
             try SwiftDataManager.update(self.examData)
         }
     }

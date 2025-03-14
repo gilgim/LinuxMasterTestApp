@@ -12,17 +12,10 @@ struct LinuxMasterMainView: View {
     var body: some View {
         NavigationStack(path: $examListNavigationData.path) {
             ExamListView()
-                .environment(examListNavigationData)
                 .navigationTitle("시험 목록")
+                .background(Color(.systemGroupedBackground))
+                .environment(examListNavigationData)
                 .toolbar {
-                    // 왼쪽에 메뉴 버튼: 추후 사이드바나 설정 화면 등으로 확장
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            // 메뉴 열기 액션
-                        } label: {
-                            Image(systemName: "line.3.horizontal")
-                        }
-                    }
                     // 오른쪽에 프로필 버튼: 사용자 정보 및 기타 기능으로 확장 가능
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
@@ -35,6 +28,7 @@ struct LinuxMasterMainView: View {
                         } label: {
                             Image(systemName: "person.crop.circle")
                         }
+                        .foregroundStyle(Color.purple.opacity(0.38))
                     }
                 }
                 .navigationDestination(for: NavigationPathKey.self) { navigationType in
@@ -55,7 +49,6 @@ struct LinuxMasterMainView: View {
                         EmptyView()
                     }
                 }
-                .background(Color(.systemGroupedBackground))
         }
     }
 }

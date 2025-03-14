@@ -72,7 +72,7 @@ struct ExamView: View {
             case .active:
                 break
             case .inactive:
-                break
+                vm.forcePreventExam()
             case .background:
                 break
             @unknown default:
@@ -91,16 +91,23 @@ struct ExamView: View {
                     title: Text("시험을 취소하시겠습니까?"),
                     primaryButton: .cancel(Text("취소")),
                     secondaryButton: .default(Text("확인"), action: {
-                        navigationData.path = .init()
+                        if vm.isAnsweredQuestion {
+                            self.activeAlert = .save
+                        } else {
+                            navigationData.path = .init()
+                            self.vm.cancelExam()
+                        }
                     })
                 )
             case .save:
                 return Alert(
                     title: Text("시험을 저장하시겠습니까?"),
                     primaryButton: .cancel(Text("아니오"), action: {
+                        self.vm.cancelExam()
                         navigationData.path = .init()
                     }),
                     secondaryButton: .default(Text("예"), action: {
+                        self.vm.saveExam()
                         navigationData.path = .init()
                     })
                 )
@@ -114,9 +121,9 @@ struct ExamView: View {
                 )
             }
         }
-        //  MARK: Style
         .modifier(ExamViewStyle(navigationData: _navigationData, vm: $vm, activeAlert: $activeAlert))
     }
+    //  MARK: Style
     private struct ExamViewStyle: ViewModifier {
         @Environment(NavigationData.self) var navigationData
         @Binding var vm: ExamViewModel

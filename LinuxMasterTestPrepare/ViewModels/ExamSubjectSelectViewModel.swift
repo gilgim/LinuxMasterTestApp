@@ -8,9 +8,12 @@
 import Foundation
 
 @Observable class ExamSubjectSelectViewModel {
-    let examName: String
-    var selectSubjects: [SubjectType] = [.subject1, .subject2, .subject3]
-    var examData: [ExamData] = []
+    //  MARK: Private Property
+    private(set) var selectSubjects: [SubjectType] = [.subject1, .subject2, .subject3]
+    private(set) var examData: [ExamData] = []
+    
+    //  MARK: Public Property
+    public let examName: String
     init(examName: String) {
         self.examName = examName
         Task { @MainActor in
@@ -18,6 +21,7 @@ import Foundation
             self.examData = self.examData.filter({$0.examName == examName})
         }
     }
+    //  MARK: Actions
     func selectSubject(type: SubjectType) -> Bool {
         if let index = selectSubjects.firstIndex(where: { $0 == type }) {
             if selectSubjects[index] == type {
@@ -40,12 +44,14 @@ import Foundation
             selectSubjects.append(type)
         }
     }
+    //  MARK: Views
     func checkPrevioseTest() -> Bool {
         return !(self.examData.filter({$0.examType == .previousPractice}).isEmpty)
     }
     func checkForceQuitTest() -> Bool {
         return !(self.examData.filter({$0.examType == .forceQuitPractice}).isEmpty)
     }
+    //  MARK: Datas
     func previousExamData() -> [ExamData] {
         return self.examData.filter({$0.examType == .previousPractice})
     }

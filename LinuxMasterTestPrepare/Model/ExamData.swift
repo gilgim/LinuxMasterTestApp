@@ -36,15 +36,40 @@ import Foundation
         }
     }
     
+    var confirmAnswersData: Data?
+    var confirmAnswers: [UserAnswer] {
+        get {
+            if let confirmAnswersData {
+                return Util.parseJSON(data: confirmAnswersData, to: [UserAnswer].self) ?? []
+            } else {
+                return []
+            }
+        }
+        set {
+            confirmAnswersData = Util.encodeJSON(from: newValue)
+        }
+    }
+    
     var selectSubjects: [String]
     var selectSubjectsTypes: [SubjectType] {
         return selectSubjects.map({SubjectType(rawValue: $0)!})
     }
-    init(examName: String, examType: ExamType, userAnswers: [UserAnswer], selectSubjects: [SubjectType]) {
+    init(examName: String, examType: ExamType, userAnswers: [UserAnswer], confirmAnswers: [UserAnswer] = [], selectSubjects: [SubjectType]) {
         self.id = UUID()
         self.examName = examName
         self.examTypeString = examType.rawValue
         self.userAnswersData = Util.encodeJSON(from: userAnswers)
         self.selectSubjects = selectSubjects.map({$0.rawValue})
+    }
+    var description: String {
+        return """
+        ExamData:
+          id: \(id)
+          examName: \(examName)
+          examType: \(examType)
+          userAnswers: \(userAnswers)
+          confirmAnswers: \(confirmAnswers)
+          selectSubjects: \(selectSubjects)
+        """
     }
 }

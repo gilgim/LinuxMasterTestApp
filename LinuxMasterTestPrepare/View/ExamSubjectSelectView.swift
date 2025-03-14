@@ -18,7 +18,8 @@ struct ExamSubjectSelectView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            //  과목별 정보
+            Text("과목 선택")
+                .font(.headline)
             HStack {
                 ForEach(SubjectType.allCases, id: \.self) { subject in
                     VStack(alignment: .leading, spacing: 8) {
@@ -30,154 +31,38 @@ struct ExamSubjectSelectView: View {
                             MetricView(title: "정답률", value: "0%")
                         }
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(UIColor.secondarySystemBackground))
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color(UIColor.separator), lineWidth: 1)
-                    )
-                }
-            }
-            
-            // 과목 선택 영역
-            VStack(alignment: .leading, spacing: 6) {
-                Text("과목 선택")
-                    .font(.headline)
-                ForEach(SubjectType.allCases, id: \.self) { subject in
-                    HStack {
-                        HStack {
-                            Image(systemName: vm.selectSubject(type: subject) ? "checkmark.square.fill" : "square")
-                                .resizable()
-                                .symbolRenderingMode(.palette)
-                                .foregroundStyle(.white, .purple)
-                                .frame(width: 20, height: 20)
-                            Text(subject.rawValue)
-                        }
-                        .padding(.vertical, 6)
-                        .padding(.horizontal, 8)
-                        .background(vm.selectSubject(type: subject) ? Color.purple.opacity(0.24) : Color.black.opacity(0.12))
-                        .clipShape(.buttonBorder)
-                        Spacer()
-                    }
+                    .modifier(ExamInfoComponentStyle(vm.selectSubject(type: subject) ? .purple : .black, alignment: .leading))
                     .onTapGesture {
                         vm.checkSubject(type: subject)
                     }
                 }
             }
-            .padding(.top, 24)
-            
+            .padding(.top, 12)
             // 이전 시험 영역
             Text("이전 시험")
                 .font(.headline)
                 .padding(.top, 24)
             if vm.checkPrevioseTest() {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(vm.previousExamData(), id: \.self) { exam in
-                            Button(action: {
-                                dismiss()
-                                navigationData.path.append(NavigationPathKey.previousExam(examData: exam))
-                            }) {
-                                VStack(spacing: 8) {
-                                    Text(exam.examName)
-                                        .font(.subheadline)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.primary)
-                                    Text("이전 문제 풀기")
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(.blue)
-                                        .padding(.vertical, 4)
-                                        .padding(.horizontal, 8)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 12)
-                                                .stroke(Color.blue, lineWidth: 1)
-                                        )
-                                }
-                                .padding()
-                                .background(Color(UIColor.systemGray6))
-                                .cornerRadius(12)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+                StoppedExamView(dismiss: _dismiss, accentColor: .purple)
+                    .environment(vm)
+                    .environment(navigationData)
+                    .padding(.top, 12)
             } else {
-                HStack(spacing: 8) {
-                    Image(systemName: "pencil.and.scribble")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.gray)
-                    Text("진행 중인 시험이 없습니다.\n시험을 중단한 경우라면 다시 진행할 수 있습니다.")
-                        .font(.caption)
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.gray)
-                }
-                .frame(maxWidth: .infinity)
-                .background(Color(UIColor.tertiarySystemBackground))
-                .cornerRadius(12)
-                .padding(.top, 12)
+                Text("진행 중인 시험이 없습니다.\n시험을 중단한 경우라면 다시 진행할 수 있습니다.")
+                    .modifier(ExamEmptyViewStyle(systemName: "pencil.and.scribble"))
             }
-            
             // 강제종료 시험 영역
             Text("마저풀기")
                 .font(.headline)
                 .padding(.top, 32)
             if vm.checkForceQuitTest() {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(vm.forceQuitExamData(), id: \.self) { exam in
-                            Button(action: {
-                                dismiss()
-                                navigationData.path.append(NavigationPathKey.forceQuitExam(examData: exam))
-                            }) {
-                                VStack(spacing: 8) {
-                                    Text(exam.examName)
-                                        .font(.subheadline)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.primary)
-                                    Text("마저 풀기")
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(.red)
-                                        .padding(.vertical, 4)
-                                        .padding(.horizontal, 8)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 12)
-                                                .stroke(Color.red, lineWidth: 1)
-                                        )
-                                }
-                                .padding()
-                                .background(Color(UIColor.systemGray6))
-                                .cornerRadius(12)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                    .padding(.horizontal)
-                }
+                ForceStoppedExamView(dismiss: _dismiss, accentColor: .red)
+                    .environment(vm)
+                    .environment(navigationData)
+                    .padding(.top, 12)
             } else {
-                HStack(spacing: 8) {
-                    Image(systemName: "xmark.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 32, height: 32)
-                        .foregroundColor(.gray)
-                    Text("강제 종료된 시험이 없습니다.\n강제 종료된 시험이 있을 경우 다시 진행할 수 있습니다.")
-                        .font(.caption)
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.gray)
-                }
-                .frame(maxWidth: .infinity)
-                .background(Color(UIColor.tertiarySystemBackground))
-                .cornerRadius(12)
-                .padding(.top, 20)
+                Text("강제 종료된 시험이 없습니다.\n강제 종료된 시험이 있을 경우 다시 진행할 수 있습니다.")
+                    .modifier(ExamEmptyViewStyle(systemName: "xmark.circle"))
             }
             Spacer()
             // 액션 버튼 영역
@@ -187,38 +72,180 @@ struct ExamSubjectSelectView: View {
                     navigationData.path.append(NavigationPathKey.exam(examName: vm.examName, examType: .practice, subjectType: vm.selectSubjects))
                 }) {
                     Text("문제풀기")
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 12)
-                                    .foregroundStyle(.white)
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(lineWidth: 3)
-                            }
-                        )
-                        .foregroundColor(Color.purple)
                 }
+                .buttonStyle(ExamButtonStyle(fillButton: false))
                 
                 Button(action: {
                     dismiss()
                     navigationData.path.append(NavigationPathKey.exam(examName: vm.examName, examType: .test, subjectType: vm.selectSubjects))
                 }) {
                     Text("시험보기")
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundStyle(.purple)
-                        )
-                        .foregroundColor(Color.white)
                 }
+                .buttonStyle(ExamButtonStyle(fillButton: true))
             }
         }
         .padding(.vertical)
         .padding(.horizontal, 16)
+    }
+    //  MARK: View & Style
+    //  과목 선택 요소
+    struct SelectSubjectView: View {
+        @Environment(ExamSubjectSelectViewModel.self) var vm
+        let subject: SubjectType
+        var body: some View {
+            HStack {
+                Image(systemName: vm.selectSubject(type: subject) ? "checkmark.square.fill" : "square")
+                    .resizable()
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, .purple)
+                    .frame(width: 20, height: 20)
+                Text(subject.rawValue)
+            }
+            .padding(.vertical, 6)
+            .padding(.horizontal, 8)
+            .background(vm.selectSubject(type: subject) ? Color.purple.opacity(0.24) : Color.black.opacity(0.12))
+            .clipShape(.buttonBorder)
+        }
+    }
+    //  이전 진행 중인 시험 목록
+    struct StoppedExamView: View {
+        @Environment(NavigationData.self) var navigationData
+        @Environment(\.dismiss) var dismiss
+        @Environment(ExamSubjectSelectViewModel.self) var vm
+        let accentColor: Color
+        var body: some View {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(vm.previousExamData(), id: \.self) { exam in
+                        Button(action: {
+                            dismiss()
+                            navigationData.path.append(NavigationPathKey.previousExam(examData: exam))
+                        }) {
+                            VStack(alignment: .center, spacing: 8) {
+                                Text(Util.examNameFormatting(exam.examName))
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .foregroundColor(accentColor.opacity(0.87))
+                                HStack(alignment: .top) {
+                                    MetricView(title: "날짜", value: "2025년 11월 25일\n2시 24분", activeColor: accentColor)
+                                    MetricView(title: "진행률", value: "0%", activeColor: accentColor)
+                                }
+                            }
+                            .modifier(ExamSubjectSelectView.ExamInfoComponentStyle(accentColor, alignment: .center))
+                            .frame(width: 200)
+                        }
+                    }
+                    Spacer()
+                }
+            }
+        }
+    }
+    //  강제 종료된 시험 목록
+    struct ForceStoppedExamView: View {
+        @Environment(NavigationData.self) var navigationData
+        @Environment(\.dismiss) var dismiss
+        @Environment(ExamSubjectSelectViewModel.self) var vm
+        let accentColor: Color
+        var body: some View {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(vm.forceQuitExamData(), id: \.self) { exam in
+                        Button(action: {
+                            dismiss()
+                            navigationData.path.append(NavigationPathKey.forceQuitExam(examData: exam))
+                        }) {
+                            VStack(alignment: .center, spacing: 8) {
+                                Text(Util.examNameFormatting(exam.examName))
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .foregroundColor(accentColor.opacity(0.87))
+                                HStack(alignment: .top) {
+                                    MetricView(title: "날짜", value: "2025년 11월 25일\n2시 24분", activeColor: accentColor)
+                                    MetricView(title: "진행률", value: "0%", activeColor: accentColor)
+                                }
+                            }
+                            .modifier(ExamSubjectSelectView.ExamInfoComponentStyle(accentColor, alignment: .center))
+                            .frame(width: 150)
+                        }
+                    }
+                    Spacer()
+                }
+            }
+        }
+    }
+    //  정보 노출 뷰 스타일
+    struct ExamInfoComponentStyle: ViewModifier {
+        let activeColor: Color
+        let alignment: Alignment
+        init(_ activeColor: Color = .black, alignment: Alignment) {
+            self.activeColor = activeColor
+            self.alignment = alignment
+        }
+        func body(content: Content) -> some View {
+            content
+                .padding()
+                .frame(maxWidth: .infinity, alignment: alignment)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(activeColor.opacity(0.05))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(activeColor.opacity(0.2), lineWidth: 1)
+                )
+        }
+    }
+    //  빈화면 스타일
+    struct ExamEmptyViewStyle: ViewModifier {
+        let systemName: String
+        func body(content: Content) -> some View {
+            HStack(spacing: 8) {
+                Image(systemName: systemName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 32, height: 32)
+                    .foregroundColor(.gray)
+                content
+                    .font(.caption)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.gray)
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color(UIColor.tertiarySystemBackground))
+            .cornerRadius(12)
+            .padding(.top, 20)
+            .padding(.leading, 48)
+        }
+    }
+    //  하단 버튼 스타일
+    struct ExamButtonStyle: ButtonStyle {
+        let fillButton: Bool
+        func makeBody(configuration: Configuration) -> some View {
+            if fillButton {
+                configuration.label
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundStyle(.purple)
+                    )
+                    .foregroundColor(Color.white)
+            } else {
+                configuration.label
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundStyle(.white)
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(lineWidth: 3)
+                        }
+                    )
+                    .foregroundColor(Color.purple)
+            }
+        }
     }
 }
 

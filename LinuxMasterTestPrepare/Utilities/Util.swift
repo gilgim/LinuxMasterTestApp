@@ -8,6 +8,12 @@ import UIKit
 import ImageIO
 
 class Util {
+    /// 운동명 수정
+    static func examNameFormatting(_ examName: String) -> String {
+        let components = examName.split(separator: "_").map { String($0) }
+        guard components.count >= 3 else { return examName }
+        return "\(components[0])년 \(components[1])월 \(components[2])일 회차"
+    }
     /// Find All Json File
     static func getJSONFileNames(subdirectory: String? = nil) -> [String] {
         guard let jsonURLs = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: subdirectory) else {

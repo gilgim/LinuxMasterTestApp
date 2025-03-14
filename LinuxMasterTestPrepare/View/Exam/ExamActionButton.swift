@@ -15,66 +15,53 @@ struct ExamActionButton: View {
             Button(action: {
                 vm.resetAnswer(question: questionData)
             }) {
-                HStack {
-                    Image(systemName: "arrow.counterclockwise")
-                    Text("다시풀기")
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.blue.opacity(0.1))
-                .foregroundColor(Color.blue)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.blue, lineWidth: 1)
-                )
+                Image(systemName: "arrow.counterclockwise")
+                Text("다시풀기")
+                    .fontWeight(.medium)
             }
+            .buttonStyle(ExamActionButtonStyle(activeColor: .blue))
         } else if vm.isShowConfirmButton(question: questionData) {
             Button(action: {
                 self.vm.confirmAnswer(question: questionData)
             }) {
-                HStack {
-                    Image(systemName: "checkmark.circle")
-                    Text("정답 확인하기")
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.green.opacity(0.1))
-                .foregroundColor(Color.green)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.green, lineWidth: 1)
-                )
+                Image(systemName: "checkmark.circle")
+                Text("정답 확인하기")
+                    .fontWeight(.medium)
             }
+            .buttonStyle(ExamActionButtonStyle(activeColor: .green))
         } else if vm.isShowGrade(question: questionData) {
             Button(action: {
                 self.vm.allConfirmAnswer()
             }) {
-                HStack {
-                    Image(systemName: "checkmark")
-                    Text("채점하기")
-                        .fontWeight(.medium)
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.green.opacity(0.1))
-                .foregroundColor(Color.green)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.green, lineWidth: 1)
-                )
+                Image(systemName: "checkmark")
+                Text("채점하기")
+                    .fontWeight(.medium)
             }
+            .buttonStyle(ExamActionButtonStyle(activeColor: .green))
             .padding(.top, 20)
+        }
+    }
+    struct ExamActionButtonStyle: ButtonStyle {
+        let activeColor: Color
+        func makeBody(configuration: Configuration) -> some View {
+            HStack {
+                configuration.label
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(activeColor.opacity(0.1))
+            .foregroundColor(activeColor)
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(activeColor, lineWidth: 1)
+            )
         }
     }
 }
 #Preview {                            
     let vm = ExamViewModel(examName: "2015_03_14", examType: .test, selectSubject: [.subject1, .subject2, .subject3])
-    let question = vm.questions().first!
+    let question = vm.questions().last!
     ExamActionButton(questionData: question)
         .environment(vm)
 }
