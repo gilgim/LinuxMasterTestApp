@@ -20,6 +20,7 @@ struct ExamAnswerListView: View {
                     Text("\(idx+1). \(questionOptions[idx])")
                         .font(.body)
                         .padding(.leading, 8)
+                        .fixedSize(horizontal: false, vertical: true)
                     Spacer()
                 }
                 .padding()
