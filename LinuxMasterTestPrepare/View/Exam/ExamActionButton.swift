@@ -22,7 +22,11 @@ struct ExamActionButton: View {
             .buttonStyle(ExamActionButtonStyle(activeColor: .blue))
         } else if vm.isShowConfirmButton(question: questionData) {
             Button(action: {
-                self.vm.confirmAnswer(question: questionData)
+                if self.vm.isCheckFinish {
+                    self.vm.activeAlert = .allCheck
+                } else {
+                    self.vm.confirmAnswer(question: questionData)
+                }
             }) {
                 Image(systemName: "checkmark.circle")
                 Text("정답 확인하기")

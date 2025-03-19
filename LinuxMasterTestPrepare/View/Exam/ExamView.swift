@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct ExamView: View {
-    enum ExamAlert: Identifiable {
-        case cancel, save, complete
-        var id: Int { hashValue }
-    }
     //  MARK: Property
     //  -Environment
     @Environment(NavigationData.self) var navigationData
@@ -19,7 +15,6 @@ struct ExamView: View {
     @Environment(\.dismiss) var dismiss
     
     //  -State
-    @State private var activeAlert: ExamAlert?
     @State var showQuestionPicker: Bool = false
     @State var vm: ExamViewModel
     
@@ -59,7 +54,7 @@ struct ExamView: View {
                     Image(systemName: "arrow.right.circle.fill")
                         .font(.title)
                         .padding()
-                        .background(Color.purple.opacity(0.8))
+                        .background(Color.accentColor.opacity(0.8))
                         .foregroundColor(.white)
                         .clipShape(Circle())
                 }
@@ -84,7 +79,7 @@ struct ExamView: View {
             ExamJumpQuestionView()
                 .environment(vm)
         }
-        .alert(item: $activeAlert) { alert in
+        .alert(item: $vm.activeAlert) { alert in
             switch alert {
             case .cancel:
                 return Alert(
@@ -92,7 +87,7 @@ struct ExamView: View {
                     primaryButton: .cancel(Text("취소")),
                     secondaryButton: .default(Text("확인"), action: {
                         if vm.isAnsweredQuestion {
-                            self.activeAlert = .save
+                            self.vm.activeAlert = .save
                         } else {
                             navigationData.path = .init()
                             self.vm.cancelExam()
@@ -116,18 +111,34 @@ struct ExamView: View {
                     title: Text("시험을 완료하시겠습니까?"),
                     primaryButton: .cancel(Text("취소")),
                     secondaryButton: .default(Text("확인"), action: {
-                        // 완료 액션 실행
+                        self.vm.saveExam()
+                        navigationData.path = .init()
+                    })
+                )
+            case .allCheck:
+                return Alert(
+                    title: Text("모든 문제를 채점하시겠습니까?"),
+                    primaryButton: .cancel(Text("취소")),
+                    secondaryButton: .default(Text("확인"), action: {
+                        self.vm.allConfirmAnswer()
+                    })
+                )
+            default:
+                return Alert(
+                    title: Text("DEFAULT"),
+                    primaryButton: .cancel(Text("CANCEL")),
+                    secondaryButton: .default(Text("OK"), action: {
                     })
                 )
             }
         }
-        .modifier(ExamViewStyle(navigationData: _navigationData, vm: $vm, activeAlert: $activeAlert))
+        .modifier(ExamViewStyle(navigationData: _navigationData, vm: $vm, activeAlert: $vm.activeAlert))
     }
     //  MARK: Style
     private struct ExamViewStyle: ViewModifier {
         @Environment(NavigationData.self) var navigationData
         @Binding var vm: ExamViewModel
-        @Binding var activeAlert: ExamAlert?
+        @Binding var activeAlert: ExamViewModel.ExamAlert?
         func body(content: Content) -> some View {
             content
                 .tabViewStyle(.page)

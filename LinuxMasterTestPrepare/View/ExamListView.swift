@@ -22,12 +22,8 @@ struct ExamListView: View {
                         Text(Util.examNameFormatting(name))
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(.primary)
-                        HStack(spacing: 16) {
-                            MetricView(title: "오답률", value: "0%")
-                            MetricView(title: "정답률", value: "0%")
-                            MetricView(title: "시험 횟수", value: "0회")
-                            MetricView(title: "연습 횟수", value: "0회")
-                        }
+                        ExamDetailView(examName: name)
+                            .environment(vm)
                     }
                     .buttonStyle(ExamListViewStyle())
                 }
@@ -49,6 +45,38 @@ struct ExamListView: View {
                     .environment(navigationData)
                     .navigationTitle(Util.examNameFormatting(selectName))
                     .navigationBarTitleDisplayMode(.inline)
+            }
+        }
+    }
+    struct ExamDetailView: View {
+        @Environment(ExamListViewModel.self) var vm
+        @State var examIncorrectRate: String = "-"
+        @State var examCorrectRate: String = "-"
+        @State var examTestCount: String = "-"
+        @State var examPracticeCount: String = "-"
+        let examName: String
+        var body: some View {
+            HStack(spacing: 16) {
+                MetricView(title: "오답률", value: examIncorrectRate)
+                MetricView(title: "정답률", value: examCorrectRate)
+                MetricView(title: "시험 횟수", value: examTestCount)
+                MetricView(title: "연습 횟수", value: examPracticeCount)
+            }
+            .onAppear() {
+                Task { @MainActor in
+                    if let examIncorrectRate = await vm.examIncorrectRate(examName: examName) {
+                        self.examIncorrectRate = "\(examIncorrectRate)%"
+                    }
+                    if let examCorrectRate = await vm.examCorrectRate(examName: examName) {
+                        self.examCorrectRate = "\(examCorrectRate)%"
+                    }
+                    if let examTestCount = await vm.examTestCount(examName: examName) {
+                        self.examTestCount = "\(examTestCount)회"
+                    }
+                    if let examPracticeCount = await vm.examPracticeCount(examName: examName) {
+                        self.examPracticeCount = "\(examPracticeCount)회"
+                    }
+                }
             }
         }
     }

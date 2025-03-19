@@ -27,11 +27,11 @@ struct ExamSubjectSelectView: View {
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(.primary)
                         HStack {
-                            MetricView(title: "오답률", value: "0%")
-                            MetricView(title: "정답률", value: "0%")
+                            MetricView(title: "오답률", value: vm.subjectIncorrectRate(subjectType: subject))
+                            MetricView(title: "정답률", value: vm.subjectCorrectRate(subjectType: subject))
                         }
                     }
-                    .modifier(ExamInfoComponentStyle(vm.selectSubject(type: subject) ? .purple : .black, alignment: .leading))
+                    .modifier(ExamInfoComponentStyle(vm.selectSubject(type: subject) ? .accentColor : .black, alignment: .leading))
                     .onTapGesture {
                         vm.checkSubject(type: subject)
                     }
@@ -43,7 +43,7 @@ struct ExamSubjectSelectView: View {
                 .font(.headline)
                 .padding(.top, 24)
             if vm.checkPrevioseTest() {
-                StoppedExamView(dismiss: _dismiss, accentColor: .purple)
+                StoppedExamView(dismiss: _dismiss, accentColor: .accentColor)
                     .environment(vm)
                     .environment(navigationData)
                     .padding(.top, 12)
@@ -97,13 +97,13 @@ struct ExamSubjectSelectView: View {
                 Image(systemName: vm.selectSubject(type: subject) ? "checkmark.square.fill" : "square")
                     .resizable()
                     .symbolRenderingMode(.palette)
-                    .foregroundStyle(.white, .purple)
+                    .foregroundStyle(Color.white, Color.accentColor)
                     .frame(width: 20, height: 20)
                 Text(subject.rawValue)
             }
             .padding(.vertical, 6)
             .padding(.horizontal, 8)
-            .background(vm.selectSubject(type: subject) ? Color.purple.opacity(0.24) : Color.black.opacity(0.12))
+            .background(vm.selectSubject(type: subject) ? Color.accentColor : Color.black.opacity(0.12))
             .clipShape(.buttonBorder)
         }
     }
@@ -185,11 +185,11 @@ struct ExamSubjectSelectView: View {
                 .frame(maxWidth: .infinity, alignment: alignment)
                 .background(
                     RoundedRectangle(cornerRadius: 12)
-                        .fill(activeColor.opacity(0.05))
+                        .fill(activeColor.opacity(0.2))
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(activeColor.opacity(0.2), lineWidth: 1)
+                        .stroke(activeColor.opacity(0.35), lineWidth: 1)
                 )
         }
     }
@@ -227,7 +227,7 @@ struct ExamSubjectSelectView: View {
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 12)
-                            .foregroundStyle(.purple)
+                            .foregroundStyle(Color.accentColor)
                     )
                     .foregroundColor(Color.white)
             } else {
@@ -243,7 +243,7 @@ struct ExamSubjectSelectView: View {
                                 .stroke(lineWidth: 3)
                         }
                     )
-                    .foregroundColor(Color.purple)
+                    .foregroundColor(Color.accentColor)
             }
         }
     }

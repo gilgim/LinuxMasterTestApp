@@ -28,7 +28,7 @@ struct LinuxMasterMainView: View {
                         } label: {
                             Image(systemName: "person.crop.circle")
                         }
-                        .foregroundStyle(Color.purple.opacity(0.38))
+                        .foregroundStyle(Color.accentColor)
                     }
                 }
                 .navigationDestination(for: NavigationPathKey.self) { navigationType in

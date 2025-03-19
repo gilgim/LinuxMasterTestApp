@@ -10,6 +10,11 @@ import SwiftUI
 
 @Observable
 class ExamViewModel {
+    enum ExamAlert: Identifiable {
+        case cancel, save, complete, allCheck
+        var id: Int { hashValue }
+    }
+    
     //  MARK: Private Property
     //  이전부터 진행됐던 시험
     private var examData: ExamData
@@ -26,9 +31,11 @@ class ExamViewModel {
     private var isPractice: Bool { return (self.examType == .practice || self.examType == .previousPractice || self.examType == .forceQuitPractice) }
     
     //  MARK: Public Property
+    public var activeAlert: ExamAlert?
     public var currentQuestion: Int = 0
     public var isAnsweredQuestion: Bool { return !(userAnswers.isEmpty)}
     public var isTestFinish: Bool { return confirmAnswers.count == self.questions().count }
+    public var isCheckFinish: Bool { return userAnswers.count == self.questions().count }
     init(examData: ExamData? = nil, examName: String? = nil, examType: ExamType? = nil, selectSubject: [SubjectType] = []) {
         //  시험을 이어서 보는 경우
         if let examData {
@@ -50,9 +57,9 @@ class ExamViewModel {
         //  필수 초기화
         } else {
             self.examName = "examName"
-            self.examType = .complete
+            self.examType = .practice
             self.selectSubject = selectSubject
-            self.examData = .init(examName: "examName", examType: .complete, userAnswers: [], selectSubjects: selectSubject)
+            self.examData = .init(examName: "examName", examType: .practice, userAnswers: [], selectSubjects: selectSubject)
         }
     }
     //  문제정보
@@ -95,6 +102,9 @@ class ExamViewModel {
         if let idx = self.questions().firstIndex(of: question), !(self.confirmAnswers.contains(where: {$0.question == question})) {
             self.confirmAnswers.append(.init(question: question, selectAnswer: self.questions()[idx].correctAnswer))
         }
+        if isTestFinish {
+            self.activeAlert = .complete
+        }
     }
     //  전부 정답 체크
     func allConfirmAnswer() {
@@ -122,14 +132,23 @@ class ExamViewModel {
             try SwiftDataManager.update(self.examData)
         }
     }
-    //  시험 중간 저장
+    //  시험 저장
     func saveExam() {
         Task { @MainActor in
-            if self.isPractice {
-                self.examData.examType = .previousPractice
-                self.examData.confirmAnswers = self.confirmAnswers
+            if isTestFinish {
+                if self.isPractice {
+                    self.examData.examType = .practiceComplete
+                    self.examData.confirmAnswers = self.confirmAnswers
+                } else {
+                    self.examData.examType = .testComplete
+                }
             } else {
-                self.examData.examType = .previousTest
+                if self.isPractice {
+                    self.examData.examType = .previousPractice
+                    self.examData.confirmAnswers = self.confirmAnswers
+                } else {
+                    self.examData.examType = .previousTest
+                }
             }
             self.examData.userAnswers = self.userAnswers
             try SwiftDataManager.update(self.examData)
@@ -145,6 +164,7 @@ class ExamViewModel {
         Task { @MainActor in
             if self.isPractice {
                 self.examData.examType = .forceQuitPractice
+                self.examData.confirmAnswers = self.confirmAnswers
             } else {
                 self.examData.examType = .forceQuitTest
             }

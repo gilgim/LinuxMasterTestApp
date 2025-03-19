@@ -6,5 +6,5 @@
 //
 
 enum ExamType: String {
-    case test, practice, complete, previousPractice, forceQuitPractice, previousTest, forceQuitTest
+    case test, practice, testComplete, practiceComplete, previousPractice, forceQuitPractice, previousTest, forceQuitTest
 }
